@@ -111,3 +111,10 @@ def products_view(request: Request):
            "number of goods": Product.objects.count(),
           "data": Product.objects.values("title", "category", "id")
     }, status=HTTP_200_OK)
+
+@api_view(["PUT"])
+def init_view(request: Request):
+    for i in range(1, 11):
+        instance = Product(title=str(i), category=str(i + 200))
+        instance.save()
+    return Response(status=HTTP_200_OK)

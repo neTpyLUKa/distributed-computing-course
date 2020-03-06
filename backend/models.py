@@ -1,3 +1,17 @@
 from django.db import models
 
-# Create your models here.
+
+class Product(models.Model):
+    title = models.TextField()
+    category = models.TextField()
+
+    @staticmethod
+    def get_product(asked_id: int):
+        return Product.objects.get(id=asked_id)
+
+    class Meta:
+        verbose_name = 'product'
+        verbose_name_plural = 'products'
+
+    def __str__(self):
+        return self.title

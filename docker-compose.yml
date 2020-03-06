@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+
+  postgresql:
+    image: postgres
+    environment:
+      - POSTGRES_USER=${SQL_USER}
+      - POSTGRES_PASSWORD=${SQL_PASSWORD}
+      - POSTGRES_DB=${SQL_DATABASE}
+
+  onlineshop:
+    build: .
+    environment:
+      - SQL_ENGINE=${SQL_ENGINE}
+      - SECRET_KEY=${SECRET_KEY}
+      - SQL_DATABASE=${SQL_DATABASE}
+      - SQL_USER=${SQL_USER}
+      - SQL_PASSWORD=${SQL_PASSWORD}
+      - SQL_HOST=${SQL_HOST}
+      - SQL_PORT=${SQL_PORT}
+
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - postgresql
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/onlineshop

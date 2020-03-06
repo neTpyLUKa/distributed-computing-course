@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
+psycopg2 = "*"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
 
 [dev-packages]
 

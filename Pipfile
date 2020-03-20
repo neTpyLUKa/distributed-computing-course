@@ -9,6 +9,7 @@ psycopg2 = "*"
 djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

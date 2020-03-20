@@ -1,27 +1,26 @@
-from django.shortcuts import render
-
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.renderers import AdminRenderer
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from backend.models import Product
-from django.core import serializers
 from rest_framework.parsers import JSONParser
 from rest_framework.status import *
-from rest_framework.generics import GenericAPIView
-from rest_framework.pagination import PageNumberPagination
-from rest_framework.mixins import ListModelMixin
+from rest_framework.generics import ListAPIView
+
+from backend.serializers import ProductSerializer
 
 
-class product_view(APIView):
+class ProductView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request: Request):
-        if 'id' not in request.query_params:
+        if 'id' not in request.data:
             return Response({"message": "id field was not provided"}, HTTP_400_BAD_REQUEST)
 
         try:
-            id = int(request.query_params.get('id'))
+            id = int(request.data.get('id'))
         except ValueError:
             return Response({"message": "wrong id, must be a number"}, HTTP_400_BAD_REQUEST)
 
@@ -37,15 +36,15 @@ class product_view(APIView):
         }, status=HTTP_200_OK)
 
     def put(self, request: Request):
-        if 'title' not in request.query_params:
+        if 'title' not in request.data:
             return Response({"message": "title field was not provided"}, HTTP_400_BAD_REQUEST)
 
-        title = request.query_params.get('title')
+        title = request.data.get('title')
         category = ''
-        
-        if 'category' in request.query_params:
-            category = request.query_params.get('category')
-            
+
+        if 'category' in request.data:
+            category = request.data.get('category')
+
         product = Product(title=title, category=category)
         product.save()
 
@@ -56,11 +55,11 @@ class product_view(APIView):
         }, status=HTTP_200_OK)
 
     def delete(self, request: Request):
-        if 'id' not in request.query_params:
+        if 'id' not in request.data:
             return Response({"message": "id field was not provided"}, HTTP_400_BAD_REQUEST)
 
         try:
-            id = int(request.query_params.get('id'))
+            id = int(request.data.get('id'))
         except ValueError:
             return Response({"message": "wrong id, must be a number"}, HTTP_400_BAD_REQUEST)
 
@@ -78,11 +77,11 @@ class product_view(APIView):
         }, status=HTTP_200_OK)
 
     def post(self, request: Request):
-        if 'id' not in request.query_params:
+        if 'id' not in request.data:
             return Response({"message": "id field was not provided"}, HTTP_400_BAD_REQUEST)
 
         try:
-            id = int(request.query_params.get('id'))
+            id = int(request.data.get('id'))
         except ValueError:
             return Response({"message": "wrong id, must be a number"}, HTTP_400_BAD_REQUEST)
 
@@ -91,11 +90,11 @@ class product_view(APIView):
         except Product.DoesNotExist:
             return Response({"message": "No such good id"}, HTTP_404_NOT_FOUND)
 
-        if 'title' in request.query_params:
-            instance.title = request.query_params.get('title')
+        if 'title' in request.data:
+            instance.title = request.data.get('title')
 
-        if 'category' in request.query_params:
-            instance.category = request.query_params.get('category')
+        if 'category' in request.data:
+            instance.category = request.data.get('category')
 
         instance.save()
 
@@ -105,15 +104,21 @@ class product_view(APIView):
             "category": instance.category,
         }, status=HTTP_200_OK)
 
-@api_view(["GET"])
-def products_view(request: Request):
-    return Response({
-           "number of goods": Product.objects.count(),
-          "data": Product.objects.values("title", "category", "id")
-    }, status=HTTP_200_OK)
+
+class Pagination(PageNumberPagination):
+    page_size_query_param = 'page_size'
+    page_size = 10
+
+
+class ListProductView(ListAPIView):
+    permission_classes = ()
+    pagination_class = Pagination
+    serializer_class = ProductSerializer
+    queryset = Product.objects.all()
+
 
 @api_view(["PUT"])
-def init_view(request: Request):
+def InitView(request: Request):
     for i in range(1, 11):
         instance = Product(title=str(i), category=str(i + 200))
         instance.save()

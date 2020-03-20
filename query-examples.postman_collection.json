@@ -1,44 +1,26 @@
 {
 	"info": {
-		"_postman_id": "1169edd5-8349-45d5-a15d-0d22e3998264",
-		"name": "hw-dc",
+		"_postman_id": "0ed49a99-7eeb-47b6-83fc-d735b0ef0590",
+		"name": "samples",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "0.0.0.0:8000/product?id=3",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "0.0.0.0:8000/product?id=3",
-					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
-					],
-					"port": "8000",
-					"path": [
-						"product"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "3"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "0.0.0.0:8000/product?id=1&title=fork",
+			"name": "0.0.0.0:8000/product",
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"11\",\"title\":\"fork\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "0.0.0.0:8000/product?id=1&title=fork",
+					"raw": "0.0.0.0:8000/product",
 					"host": [
 						"0",
 						"0",
@@ -48,59 +30,27 @@
 					"port": "8000",
 					"path": [
 						"product"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "1"
-						},
-						{
-							"key": "title",
-							"value": "fork"
-						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "0.0.0.0:8000/product?title=knife&category=weapon",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "0.0.0.0:8000/product?title=knife&category=weapon",
-					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
-					],
-					"port": "8000",
-					"path": [
-						"product"
-					],
-					"query": [
-						{
-							"key": "title",
-							"value": "knife"
-						},
-						{
-							"key": "category",
-							"value": "weapon"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "0.0.0.0:8000/product?id=8",
+			"name": "0.0.0.0:8000/product",
 			"request": {
 				"method": "DELETE",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "0.0.0.0:8000/product?id=8",
+					"raw": "0.0.0.0:8000/product",
 					"host": [
 						"0",
 						"0",
@@ -110,24 +60,30 @@
 					"port": "8000",
 					"path": [
 						"product"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "8"
-						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "0.0.0.0:8000/products",
+			"name": "0.0.0.0:8000/product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":2}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "0.0.0.0:8000/products",
+					"raw": "0.0.0.0:8000/product",
 					"host": [
 						"0",
 						"0",
@@ -136,7 +92,7 @@
 					],
 					"port": "8000",
 					"path": [
-						"products"
+						"product"
 					]
 				}
 			},
@@ -158,6 +114,67 @@
 					"port": "8000",
 					"path": [
 						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/products?page_size=5&page=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "0.0.0.0:8000/products?page_size=5&page=2",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "page_size",
+							"value": "5"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"knife\",\"category\":\"weapon\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/product",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"product"
 					]
 				}
 			},

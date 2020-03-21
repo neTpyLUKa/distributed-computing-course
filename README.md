@@ -1,30 +1,42 @@
 # distributed-computing-course
 Запуск: docker-compose up
 
-Ветка объединяет в себе первые 3 задания, товары сохраняются в базу данных, все разворачивается в докере.
+Ветка реализует сервис авторизации (4 задание)
 
-В репозитории присутствует postman collection с примерами всех запросов
+Добавил запросы для сервиса авторизации, теперь изменяющие запросы требуют access_token
 
-architecture.jpg - Архитектура проекта (используемый инструментарий)
-
-Обработка ошибок везде присутсвует
-
-Претендую на допбаллы за БД, логирование
-
-Ответы возвращаются в json
-
-id продуктов начинаются с 1, затем просто увеличиваются
+(Делал запросы через Authorization -> Bearer Token)
 
 Запросы:
 
-GET /product?id=id - получение товара по указанному id
+Регистрация:
 
-PUT /product?title=title&category=category - создать новый продукт с указанным названием и категорией, категория опциональная
+PUT /register {"email":, "password":} -> HTTP_STATUS_200_OK, или если почта уже занята, возвращает ошиюку
 
-DELETE /product?id=id - удаление продукта по id
+Авторизация:
 
-POST /product?id=id&title=title&category=category - изменение продукта с id=id, новые title, category опциональные, если их не передавать - остается старое значение
+POST /authorize {"email":, "password":} -> ("access_token":, "refresh_token":}
 
-GET /products - список всех продуктов
+Новая пара токенов:
+
+POST /refresh ("refresh_token":} -> ("access_token":, "refresh_token":}
+
+Проверка токена
+
+GET /verify ("access_token":} -> OK / NOT_OK
+
+____________________________________________
+
+GET /product {"id":id} - получение товара по указанному id
+
+PUT /product {"title":title,"category":category} - создать новый продукт с указанным названием и категорией, категория опциональная
+
+DELETE /product {"id":id} - удаление продукта по id
+
+POST /product {"id":id,"title":title,"category":category} - изменение продукта с id=id, новые title, category опциональные, если их не передавать - остается старое значение
+
+GET /products {"page":page,"page_size":page_size} - список всех продуктов, пагинация по размеру страницы page_size, номер страницы page
 
 PUT /init - запрос для тестирования, создаёт 10 продуктов в базе данных
+
+![](architecture.png)

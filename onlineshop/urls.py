@@ -16,14 +16,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from simple_auth.views import register_user, Authorize, Verify, CustomTokenRefreshView
 from backend.views import ProductView
 from backend.views import ListProductView
 from backend.views import InitView
 
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    token_verify)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('product', ProductView.as_view()),
     path('products', ListProductView.as_view()),
     path('init', InitView),
+    path('register', register_user),
+    path('authorize', Authorize.as_view()),
+    path('refresh', CustomTokenRefreshView.as_view()),
+    path('verify', Verify.as_view())
+
 ]

@@ -1,18 +1,191 @@
 {
 	"info": {
-		"_postman_id": "0ed49a99-7eeb-47b6-83fc-d735b0ef0590",
-		"name": "samples",
+		"_postman_id": "b6f48a37-6d6a-490a-a04c-e0d06e71361e",
+		"name": "hw-4",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "0.0.0.0:8000/product",
+			"name": "0.0.0.0:8000/register",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"sampleemail\", \"password\":\"samplepassword\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/register",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/authorize",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":\"11\",\"title\":\"fork\"}",
+					"raw": "{\"email\":\"sampleemail\", \"password\":\"samplepassword\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/authorize",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"authorize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/verify",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTg0Nzc5MjMwLCJqdGkiOiI0YzEzYTNmZmEzZGE0N2Q5OGM1OWVkYzZiOGEwYzdhNyIsInVzZXJfaWQiOjJ9.r_ceL7lgj1q53J9iOpJqRrpbZJ4yNsq7_vy5d-QJwQQ\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/verify",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU4NTk4ODUzMCwianRpIjoiMzUzN2UzODNhMzBkNDI1NWFkNWNiY2E4ZjBmNDY5MmMiLCJ1c2VyX2lkIjoyfQ.BemKKUYFcYLYHAzYcq80Z_qipGiCJt91aJnW_wI__8U\"\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/refresh",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/init",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTg0Nzc5NDE5LCJqdGkiOiJmMDIwM2U1OWFkNmU0NzkwOTM3Mzg3OGNlNjhhZjc4NyIsInVzZXJfaWQiOjJ9.u4G4d_9GqCRUWtnGgCaNwC9y-xknuW-_4V4q6Hu40Vs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/init",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTg0Nzc5NDE5LCJqdGkiOiJmMDIwM2U1OWFkNmU0NzkwOTM3Mzg3OGNlNjhhZjc4NyIsInVzZXJfaWQiOjJ9.u4G4d_9GqCRUWtnGgCaNwC9y-xknuW-_4V4q6Hu40Vs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1, \"title\":\"fork\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -38,6 +211,222 @@
 		{
 			"name": "0.0.0.0:8000/product",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTg0Nzc5NDE5LCJqdGkiOiJmMDIwM2U1OWFkNmU0NzkwOTM3Mzg3OGNlNjhhZjc4NyIsInVzZXJfaWQiOjJ9.u4G4d_9GqCRUWtnGgCaNwC9y-xknuW-_4V4q6Hu40Vs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"fork\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/product",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"fork\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/product",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/product",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1, \"title\":\"fork\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/product",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8000/products",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0.0.0.0:8000/product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"body": {
@@ -67,97 +456,22 @@
 		},
 		{
 			"name": "0.0.0.0:8000/product",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"id\":2}",
-					"options": {
-						"raw": {
-							"language": "json"
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTg0Nzc5NDE5LCJqdGkiOiJmMDIwM2U1OWFkNmU0NzkwOTM3Mzg3OGNlNjhhZjc4NyIsInVzZXJfaWQiOjJ9.u4G4d_9GqCRUWtnGgCaNwC9y-xknuW-_4V4q6Hu40Vs",
+							"type": "string"
 						}
-					}
+					]
 				},
-				"url": {
-					"raw": "0.0.0.0:8000/product",
-					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
-					],
-					"port": "8000",
-					"path": [
-						"product"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "0.0.0.0:8000/init",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "0.0.0.0:8000/init",
-					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
-					],
-					"port": "8000",
-					"path": [
-						"init"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "0.0.0.0:8000/products?page_size=5&page=2",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "0.0.0.0:8000/products?page_size=5&page=2",
-					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
-					],
-					"port": "8000",
-					"path": [
-						"products"
-					],
-					"query": [
-						{
-							"key": "page_size",
-							"value": "5"
-						},
-						{
-							"key": "page",
-							"value": "2"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "0.0.0.0:8000/product",
-			"request": {
-				"method": "PUT",
+				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"title\":\"knife\",\"category\":\"weapon\"}",
+					"raw": "{\"id\":1}",
 					"options": {
 						"raw": {
 							"language": "json"

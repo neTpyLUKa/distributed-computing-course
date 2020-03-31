@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework.status import *
 from django.contrib.auth.base_user import BaseUserManager
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework_simplejwt.exceptions import InvalidToken
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -44,12 +45,13 @@ class Authorize(TokenObtainPairView):
         return super().post(request)
 
 
-#class Verify = TokenVerifyView
-   # def post(self, request: Request, *args):
-    #    return Response({"message": "method not allowed"})
-
-    #def get(self, request: Request, *args):
-     #   return super().post(request)
+class Verify(TokenVerifyView):
+    def post(self, request: Request, *args):
+        try:
+            super().post(request)
+            return Response({"message": "token is valid"}, HTTP_200_OK)
+        except InvalidToken:
+            return Response({"message": "token is not valid"}, HTTP_400_BAD_REQUEST)
 
 
 class CustomTokenRefreshView(TokenRefreshView):

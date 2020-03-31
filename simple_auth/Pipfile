@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 djangorestframework-simplejwt = "*"
 psycopg2-binary = "*"
+pika = "*"
 
 [dev-packages]
 

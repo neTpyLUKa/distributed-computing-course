@@ -151,4 +151,4 @@ def InitView(request: Request):
     for i in range(1, 11):
         instance = Product(title=str(i), category=str(i + 200))
         instance.save()
-    return Response(status=HTTP_200_OK)
+    return Response({"message": "successfully created"}, status=HTTP_200_OK)

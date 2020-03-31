@@ -17,12 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework_simplejwt.views import TokenVerifyView
 
-from src.views import register_user, Authorize, CustomTokenRefreshView
+from src.views import register_user, Authorize, CustomTokenRefreshView, Verify
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register', register_user),
     path('authorize', Authorize.as_view()),
     path('refresh', CustomTokenRefreshView.as_view()),
-    path('verify', TokenVerifyView.as_view())
+    path('verify', Verify.as_view())
 ]

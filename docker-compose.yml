@@ -45,3 +45,23 @@ services:
       - ${AUTH_PORT}:${AUTH_PORT}
     volumes:
       - ./simple_auth/:/auth
+
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    volumes:
+      - rabbit_data:/var/lib/rabbitmq
+
+    ports:
+      - ${RABBIT_PORT}:${RABBIT_PORT}
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASS}
+      - RABBITMQ_DEFAULT_VHOST=${RABBITMQ_VHOST}
+        # - R#BBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit channel_max 0
+
+  notification_center:
+    env_file:
+      - .env
+    build: ./notification_center
+volumes:
+  rabbit_data:

@@ -14,7 +14,7 @@ from rest_framework_simplejwt.views import (
 from src.models import Profile
 from rest_framework_simplejwt.tokens import Token, RefreshToken
 
-from src.utils import message_queue
+from src.utils import message_queue_email, message_queue_sms
 
 
 def get_email_and_password(request: Request):
@@ -40,10 +40,14 @@ def register_user(request: Request):
 
     user = Profile.add(email, password)
     token = RefreshToken.for_user(user=user)
-    message_queue.send(email=email, token=str(token))
 
-    # TODO change message to confirm please
-    return Response({"message": "successfully created"}, HTTP_200_OK)
+    phone = request.data.get('phone', '')
+    if phone != '':
+        message_queue_sms.send(address=phone, token=str(token))
+        return Response({"message": "Check your phone to continue registration"}, HTTP_200_OK)
+    else:
+        message_queue_email.send(address=email, token=str(token))
+        return Response({"message": "Check your mailbox to continue registration"}, HTTP_200_OK)
 
 
 class Authorize(TokenObtainPairView):
@@ -65,7 +69,7 @@ class CustomTokenRefreshView(TokenRefreshView):
     pass
 
 
-@api_view(["POST"])
+@api_view(["GET"])
 def confirm_email(request: Request):
     token = request.query_params.get('token', '')
     if token == '':
@@ -76,4 +80,4 @@ def confirm_email(request: Request):
     except TokenError as e:
         return Response({"message": str(e)})
     Profile.confirm_email(object['user_id'])
-    return Response({"message": "email successfully confirmed"}, HTTP_200_OK)
+    return Response({"message": "registration complete"}, HTTP_200_OK)

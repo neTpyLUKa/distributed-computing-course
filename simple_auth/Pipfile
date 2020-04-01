@@ -7,6 +7,7 @@ name = "pypi"
 djangorestframework-simplejwt = "*"
 psycopg2-binary = "*"
 pika = "*"
+netifaces = "*"
 
 [dev-packages]
 

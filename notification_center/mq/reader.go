@@ -4,28 +4,19 @@ import (
 	"encoding/json"
 	log "github.com/sirupsen/logrus"
 	"github.com/streadway/amqp"
-	"notification/sender"
+	"notification/common"
+	"time"
 )
 
 type Reader struct {
-	sender  sender.Sender
+	sender  common.Sender
 	channel *amqp.Channel
 	queue   amqp.Queue
 }
 
-type message struct {
-	Address string `json:"address"`
-	Body    string `json:"body"`
-}
-
-func failOnError(err error, msg string) {
-	if err != nil {
-		log.Fatalf("%s: %s", msg, err)
-	}
-}
-
 func (r *Reader) Start() {
-	msgs, err := r.channel.Consume(
+	log.Info("Creating consumer channel")
+	messages, err := r.channel.Consume(
 		r.queue.Name, // queue
 		"",           // consumer
 		true,         // auto-ack
@@ -34,18 +25,21 @@ func (r *Reader) Start() {
 		false,        // no-wait
 		nil,          // args
 	)
-	failOnError(err, "Failed to register a consumer")
+	common.FailOnError(err, "Failed to register a consumer")
+	log.Info("Successfully created")
 
-	for raw_msg := range msgs {
-		var msg message
-		err := json.Unmarshal(raw_msg.Body, &msg)
+	for rawMsg := range messages {
+		var msg common.Message
+		err := json.Unmarshal(rawMsg.Body, &msg)
 		if err != nil {
-			continue // TODO handle error ?
+			log.Info("Error unmarshaling message")
+			continue
 		}
-		go r.sender.Send(msg.Address, msg.Body)
+		go r.sender.Send(msg)
+		time.Sleep(10 * time.Second)
 	}
 }
 
-func NewReader(sender sender.Sender, channel *amqp.Channel, queue amqp.Queue) *Reader {
+func NewReader(sender common.Sender, channel *amqp.Channel, queue amqp.Queue) *Reader {
 	return &Reader{sender: sender, channel: channel, queue: queue}
 }

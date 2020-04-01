@@ -41,6 +41,7 @@ services:
 
     depends_on:
       - postgres
+      - rabbitmq
     ports:
       - ${AUTH_PORT}:${AUTH_PORT}
     volumes:
@@ -61,3 +62,23 @@ services:
     command: sh -c "utils/wait-for-it.sh rabbitmq:$MQ_PORT && ./app"
     ports:
       - ${NOTIFICATION_CENTER_PORT}:${NOTIFICATION_CENTER_PORT}
+    depends_on:
+      - rabbitmq
+
+  mail:
+    image: tvial/docker-mailserver:latest
+    hostname: ${MAIL_HOSTNAME}
+    domainname: ${MAIL_DOMAIN}
+    ports:
+      - "143:143"
+    volumes:
+      - ./mail/mail:/var/mail
+      - ./mail/mailstate:/var/mail-state
+      - ./mail/maillogs:/var/log/mail
+      - ./mail/config/:/tmp/docker-mailserver/
+    env_file:
+      - .env
+      - mail/.env
+    cap_add:
+      - NET_ADMIN
+      - SYS_PTRACE

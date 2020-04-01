@@ -1,61 +1,80 @@
 package main
 
 import (
+	"fmt"
 	log "github.com/sirupsen/logrus"
 	"github.com/streadway/amqp"
+	"notification/common"
+	"notification/config"
 	"notification/mq"
 	"notification/sender"
 )
 
-func Connect() (*amqp.Connection, error) {
-	return amqp.Dial("amqp://guest:guest@rabbitmq:5672/")
+func getConnectionString(conf *config.Config) string {
+	return fmt.Sprintf("amqp://%s:%s@%s:%s",
+		conf.RabbitLogin, conf.RabbitPassword, conf.RabbitName, conf.RabbitPort)
 }
 
-func failOnError(err error, msg string) {
-	if err != nil {
-		log.Fatalf("%s: %s", msg, err)
-	}
+func Connect(connectionString string) (*amqp.Connection, error) {
+	return amqp.Dial(connectionString)
 }
 
 func main() {
-	conn, err := Connect()
-	for err != nil { // TODO add retrycount
+	log.SetFormatter(&log.TextFormatter{ForceColors:true, FullTimestamp:true, TimestampFormat:"2006-01-02 15:04:05"})
+	log.Info("Attempting to connect")
+	conf, err := config.EnvConfig()
+	common.FailOnError(err, "Error reading config")
+	connectionString := getConnectionString(conf)
+	conn, err := Connect(connectionString)
+	retryCount := 0
+	for err != nil && retryCount > 0 {
 		log.Warningf("Error connecting, %s, retrying", err)
-		conn, err = Connect()
+		conn, err = Connect(connectionString)
+		retryCount--
 	}
+	common.FailOnError(err, "Error connecting")
+	log.Info("Successfully connected")
 	defer conn.Close()
 
+	log.Info("Creating channel")
 	ch, err := conn.Channel()
-	failOnError(err, "Failed to open a channel")
+	common.FailOnError(err, "Failed to open a channel")
+	log.Info("Channel created")
 	defer ch.Close()
 
-	q, err := ch.QueueDeclare(
-		"hello", // name TODO use config
-		false,   // durable
-		false,   // delete when unused
-		false,   // exclusive
-		false,   // no-wait
-		nil,     // arguments
+	log.Info("Declaring email queue if not")
+	qEmail, err := ch.QueueDeclare(
+		conf.QueueEmail, // name
+		false,           // durable
+		false,           // delete when unused
+		false,           // exclusive
+		false,           // no-wait
+		nil,             // arguments
 	)
-	failOnError(err, "Failed to declare a queue")
+	common.FailOnError(err, "Failed to declare a queue")
+	log.Info("Successfully declared")
 
-	email_sender := sender.NewEmailSender(ch, q)
-	reader := mq.NewReader(email_sender, ch, q)
+	log.Info("Declaring sms queue if not")
+	qSMS, err := ch.QueueDeclare(
+		conf.QueueSms, // name
+		false,           // durable
+		false,           // delete when unused
+		false,           // exclusive
+		false,           // no-wait
+		nil,             // arguments
+	)
+	common.FailOnError(err, "Failed to declare a queue")
+	log.Info("Successfully declared")
 
+	emailSender := sender.NewEmailSender(ch, qEmail, conf)
+	readerEmail := mq.NewReader(emailSender, ch, qEmail)
+
+	smsSender := sender.NewSMSSender()
+	readerSms := mq.NewReader(smsSender, ch, qSMS)
 	forever := make(chan struct{})
 
-	go reader.Start()
+	go readerEmail.Start()
+	go readerSms.Start()
 
 	<-forever
-	/*body := "Hello World!"
-	err = ch.Publish(
-		"",     // exchange
-		q.Name, // routing key
-		false,  // mandatory
-		false,  // immediate
-		amqp.Publishing {
-			ContentType: "text/plain",
-			Body:        []byte(body),
-		})
-	failOnError(err, "Failed to publish a message")
-*/}
+}

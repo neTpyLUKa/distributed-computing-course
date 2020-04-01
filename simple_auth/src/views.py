@@ -6,12 +6,16 @@ from rest_framework.response import Response
 from rest_framework.status import *
 from django.contrib.auth.base_user import BaseUserManager
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework_simplejwt.exceptions import InvalidToken
+from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
     TokenVerifyView)
 from src.models import Profile
+from rest_framework_simplejwt.tokens import Token, RefreshToken
+
+from src.utils import message_queue
+
 
 def get_email_and_password(request: Request):
     email = request.data.get('email', '')
@@ -34,8 +38,11 @@ def register_user(request: Request):
     if Profile.exists(email):
         return Response({"message": "user already registered"}, HTTP_400_BAD_REQUEST)
 
-    Profile.add(email, password)
+    user = Profile.add(email, password)
+    token = RefreshToken.for_user(user=user)
+    message_queue.send(email=email, token=str(token))
 
+    # TODO change message to confirm please
     return Response({"message": "successfully created"}, HTTP_200_OK)
 
 
@@ -56,3 +63,17 @@ class Verify(TokenVerifyView):
 
 class CustomTokenRefreshView(TokenRefreshView):
     pass
+
+
+@api_view(["POST"])
+def confirm_email(request: Request):
+    token = request.query_params.get('token', '')
+    if token == '':
+        return Response({"message": "token was not provided"}, HTTP_400_BAD_REQUEST)
+
+    try:
+        object = RefreshToken(token=token)
+    except TokenError as e:
+        return Response({"message": str(e)})
+    Profile.confirm_email(object['user_id'])
+    return Response({"message": "email successfully confirmed"}, HTTP_200_OK)

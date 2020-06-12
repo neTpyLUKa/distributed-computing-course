@@ -16,9 +16,9 @@ services:
       context: store
       dockerfile: Dockerfile
     command: sh -c "utils/wait-for-it.sh auth:$AUTH_PORT &&
-                    python manage.py makemigrations &&
-                    python manage.py migrate &&
-                    python manage.py runserver 0.0.0.0:$STORE_PORT"
+      python manage.py makemigrations &&
+      python manage.py migrate &&
+      python manage.py runserver 0.0.0.0:$STORE_PORT"
 
     depends_on:
       - postgres
@@ -35,9 +35,9 @@ services:
       context: simple_auth
       dockerfile: Dockerfile
     command: sh -c "utils/wait-for-it.sh postgres:$SQL_PORT &&
-                    python manage.py makemigrations &&
-                    python manage.py migrate &&
-                    python manage.py runserver 0.0.0.0:$AUTH_PORT"
+      python manage.py makemigrations &&
+      python manage.py migrate &&
+      python manage.py runserver 0.0.0.0:$AUTH_PORT"
 
     depends_on:
       - postgres
@@ -65,12 +65,40 @@ services:
     depends_on:
       - rabbitmq
 
+  csv_receiver:
+    env_file:
+      - .env
+    build: ./csv_recevier
+    command: sh -c "utils/wait-for-it.sh rabbitmq:$MQ_PORT && ./app"
+    ports:
+      - ${CSV_RECEIVER_PORT}:${CSV_RECEIVER_PORT}
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ./csv_data/:/csv_data
+
+  csv_applier:
+    env_file:
+      - .env
+    build:
+      context: csv_applier
+      dockerfile: Dockerfile
+    command: sh -c "utils/wait-for-it.sh postgres:$SQL_PORT
+      && utils/wait-for-it.sh rabbitmq:$MQ_PORT
+      && python /csv_applier/main.py"
+    depends_on:
+      - postgres
+      - rabbitmq
+    volumes:
+      - ./csv_data/:/csv_data
+
+
   mail:
     image: tvial/docker-mailserver:latest
     hostname: ${MAIL_HOSTNAME}
     domainname: ${MAIL_DOMAIN}
     ports:
-      - "143:143"
+      - "6543:143"
     volumes:
       - ./mail/mail:/var/mail
       - ./mail/mailstate:/var/mail-state

@@ -1,20 +1,34 @@
-from django.contrib.sites import requests
-from django.shortcuts import render
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.status import *
 from django.contrib.auth.base_user import BaseUserManager
-from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-    TokenVerifyView)
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenVerifyView, TokenRefreshView
+
 from src.models import Profile
-from rest_framework_simplejwt.tokens import Token, RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken, UntypedToken
 
 from src.utils import message_queue_email, message_queue_sms
+
+from proto.auth_pb2 import (
+    Admin,
+    Token,
+)
+
+def get_token(request: Request):
+    return request.META.get("HTTP_AUTHORIZATION", '').split("Bearer ")[-1]
+
+def is_admin(request: Request):
+    token = get_token(request)
+    try:
+        token = UntypedToken(token)
+        profile = Profile.objects.get(user_id=token["user_id"])
+        return profile.role == Admin
+    except TokenError as e:
+        print(e)
+
+    return False
 
 
 def get_email_and_password(request: Request):
@@ -48,6 +62,24 @@ def register_user(request: Request):
     else:
         message_queue_email.send(address=email, token=str(token))
         return Response({"message": "Check your mailbox to continue registration"}, HTTP_200_OK)
+
+
+@api_view(["PUT"])
+def register_admin(request: Request):
+    if not is_admin(request):
+        return Response({"message": "Wrong token or not provided or not enough privileges"}, HTTP_401_UNAUTHORIZED)
+
+    email, password = get_email_and_password(request)
+    if email is None:
+        return Response({"message": "email or password was not provided"}, HTTP_400_BAD_REQUEST)
+
+    if Profile.exists(email):
+        return Response({"message": "user already registered"}, HTTP_400_BAD_REQUEST)
+
+    user = Profile.add(email, password, role=Admin, is_active=True)
+    user.save()
+
+    return Response({"message": "Admin successfully registered"}, HTTP_200_OK)
 
 
 class Authorize(TokenObtainPairView):

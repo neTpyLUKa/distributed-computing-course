@@ -1,0 +1,21 @@
+From amavis@mail.localhost.com  Sat Jun 13 06:18:10 2020
+Return-Path: <amavis@mail.localhost.com>
+X-Original-To: amavis
+Delivered-To: amavis@mail.localhost.com
+Received: by mail.localhost.com (Postfix, from userid 109)
+	id 2367B604F38; Sat, 13 Jun 2020 06:18:10 +0000 (UTC)
+From: root@mail.localhost.com (Cron Daemon)
+To: amavis@mail.localhost.com
+Subject: Cron <amavis@mail> test -e /usr/sbin/amavisd-new-cronjob && /usr/sbin/amavisd-new-cronjob sa-sync
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 8bit
+X-Cron-Env: <SHELL=/bin/sh>
+X-Cron-Env: <HOME=/var/lib/amavis>
+X-Cron-Env: <PATH=/usr/bin:/bin>
+X-Cron-Env: <LOGNAME=amavis>
+Message-Id: <20200613061810.2367B604F38@mail.localhost.com>
+Date: Sat, 13 Jun 2020 06:18:10 +0000 (UTC)
+
+config: created user preferences file: /var/lib/amavis/.spamassassin/user_prefs
+

@@ -9,9 +9,11 @@ ENV PYTHONDONTWRITEBYTECODE 1
 # set work directory
 WORKDIR /onlineshop
 
-COPY Pipfile Pipfile
-COPY Pipfile.lock Pipfile.lock
+COPY store/Pipfile .
+COPY store/Pipfile.lock .
 RUN pipenv install --system --deploy
 
 # copy everything else
-ADD . .
+ADD store .
+
+COPY proto proto

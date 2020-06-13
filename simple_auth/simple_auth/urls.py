@@ -13,17 +13,31 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import os
+
 from django.contrib import admin
 from django.urls import path
 from rest_framework_simplejwt.views import TokenVerifyView
 
-from src.views import register_user, Authorize, CustomTokenRefreshView, Verify, confirm_email
+from src.views import register_user, Authorize, CustomTokenRefreshView, Verify, confirm_email, register_admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register', register_user),
+    path('register_user', register_user),
+    path('register_admin', register_admin),
     path('authorize', Authorize.as_view()),
     path('refresh', CustomTokenRefreshView.as_view()),
-    path('verify', Verify.as_view()),
+    # path('verify', Verify.as_view()),
     path('confirm_email', confirm_email),
 ]
+
+if os.environ.get("AUTH_GRPC_MODE"):
+    import sys
+
+    sys.path.insert(0, "..")
+
+    from src.handlers import grpc_handlers as auth_grpc_handlers
+
+
+    def grpc_handlers(server):
+        auth_grpc_handlers(server)

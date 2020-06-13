@@ -8,6 +8,9 @@ djangorestframework-simplejwt = "*"
 psycopg2-binary = "*"
 pika = "*"
 netifaces = "*"
+grpcio-tools = "*"
+grpcio = "*"
+djangogrpcframework = "*"
 
 [dev-packages]
 

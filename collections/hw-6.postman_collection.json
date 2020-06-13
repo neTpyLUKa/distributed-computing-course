@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "d9960d9f-f3a5-407b-bc73-166b2eda9b38",
+		"name": "hw-6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "0.0.0.0:8003/upload",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/home/kiruha/Downloads/amazon_co-ecommerce_sample.csv"
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:8003/upload",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8003",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,27 @@
+Return-Path: <0@localhost.com>
+Delivered-To: 2@localhost.com
+Received: from mail.localhost.com
+	by mail.localhost.com with LMTP
+	id 3k63ISVt5F6bCAAA2qOm9g
+	(envelope-from <0@localhost.com>)
+	for <2@localhost.com>; Sat, 13 Jun 2020 06:07:33 +0000
+Received: from localhost (localhost [127.0.0.1])
+	by mail.localhost.com (Postfix) with ESMTP id 8579B604F39
+	for <2@localhost.com>; Sat, 13 Jun 2020 06:07:33 +0000 (UTC)
+Mime-Version: 1.0
+Date: Sat, 13 Jun 2020 06:07:33 +0000
+From: 0@localhost.com
+To: 2@localhost.com
+Subject: Email confirmation from Online Store
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-Id: <20200613060733.8579B604F39@mail.localhost.com>
+
+To confirm your registration click on this link=20
+
+http://192.168.1.75:8001/confirm_email?token=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJI=
+UzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU5MzIzODA1MywianRpIjoiMj=
+cyMTUyYmFjZTlmNGJhYmFlZGQxYTZiZjYxZmJhMzciLCJ1c2VyX2lkIjozfQ.z5s7KrsDlVqnRf=
+-yw3u9pFXoyc5DT8Bmdmh31icWfDs
+
+This link is available only for 12 hours

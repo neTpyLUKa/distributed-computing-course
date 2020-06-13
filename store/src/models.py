@@ -4,6 +4,7 @@ from django.db import models
 class Product(models.Model):
     title = models.TextField()
     category = models.TextField()
+    uniq_id = models.TextField(null=True)
 
     @staticmethod
     def get_product(asked_id: int):

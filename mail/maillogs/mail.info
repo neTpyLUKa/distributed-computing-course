@@ -501,3 +501,967 @@ Jun 11 17:35:53 mail opendmarc[172]: OpenDMARC Filter: mi_stop=1
 Jun 11 17:35:53 mail opendmarc[172]: OpenDMARC Filter v1.3.2 terminating with status 0, errno = 0
 Jun 11 17:35:57 mail opendkim[166]: OpenDKIM Filter: mi_stop=1
 Jun 11 17:35:57 mail opendkim[166]: OpenDKIM Filter v2.11.0 terminating with status 0, errno = 0
+Jun 12 21:29:53 mail dovecot: master: Dovecot v2.3.10 (0da0eff44) starting up for imap, lmtp
+Jun 12 21:29:53 mail opendkim[172]: OpenDKIM Filter v2.11.0 starting (args: -f)
+Jun 12 21:29:53 mail opendmarc[178]: OpenDMARC Filter v1.3.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+Jun 12 21:29:53 mail opendmarc[178]: additional trusted authentication services: mail.localhost.com
+Jun 12 21:29:55 mail amavis[431]: starting. /usr/sbin/amavisd-new at mail.localhost.com amavisd-new-2.10.1 (20141025), Unicode aware
+Jun 12 21:29:55 mail amavis[431]: Net::Server: Group Not Defined.  Defaulting to EGID '111 111'
+Jun 12 21:29:55 mail amavis[431]: Net::Server: User Not Defined.  Defaulting to EUID '109'
+Jun 12 21:29:55 mail amavis[431]: Module Amavis::Conf        2.404
+Jun 12 21:29:55 mail amavis[431]: Module Archive::Zip        1.59
+Jun 12 21:29:55 mail amavis[431]: Module BerkeleyDB          0.55
+Jun 12 21:29:55 mail amavis[431]: Module Compress::Raw::Zlib 2.069
+Jun 12 21:29:55 mail amavis[431]: Module Compress::Zlib      2.069001
+Jun 12 21:29:55 mail amavis[431]: Module Digest::MD5         2.54
+Jun 12 21:29:55 mail amavis[431]: Module Encode              2.80_01
+Jun 12 21:29:55 mail amavis[431]: Module File::Temp          0.2304
+Jun 12 21:29:55 mail amavis[431]: Module IO::Socket::IP      0.37
+Jun 12 21:29:55 mail amavis[431]: Module MIME::Entity        5.508
+Jun 12 21:29:55 mail amavis[431]: Module MIME::Parser        5.508
+Jun 12 21:29:55 mail amavis[431]: Module MIME::Tools         5.508
+Jun 12 21:29:55 mail amavis[431]: Module Mail::Header        2.18
+Jun 12 21:29:55 mail amavis[431]: Module Mail::Internet      2.18
+Jun 12 21:29:55 mail amavis[431]: Module Net::LibIDN         0.12
+Jun 12 21:29:55 mail amavis[431]: Module Net::Server         2.008
+Jun 12 21:29:55 mail amavis[431]: Module Scalar::Util        1.4202
+Jun 12 21:29:55 mail amavis[431]: Module Socket              2.020_03
+Jun 12 21:29:55 mail amavis[431]: Module Time::HiRes         1.9733
+Jun 12 21:29:55 mail amavis[431]: Module Unix::Syslog        1.1
+Jun 12 21:29:55 mail amavis[431]: Amavis::ZMQ code     NOT loaded
+Jun 12 21:29:55 mail amavis[431]: Amavis::DB code      loaded
+Jun 12 21:29:55 mail amavis[431]: SQL base code        NOT loaded
+Jun 12 21:29:55 mail amavis[431]: SQL::Log code        NOT loaded
+Jun 12 21:29:55 mail amavis[431]: SQL::Quarantine      NOT loaded
+Jun 12 21:29:55 mail amavis[431]: Lookup::SQL code     NOT loaded
+Jun 12 21:29:55 mail amavis[431]: Lookup::LDAP code    NOT loaded
+Jun 12 21:29:55 mail amavis[431]: AM.PDP-in proto code loaded
+Jun 12 21:29:55 mail amavis[431]: SMTP-in proto code   loaded
+Jun 12 21:29:55 mail amavis[431]: Courier proto code   NOT loaded
+Jun 12 21:29:55 mail amavis[431]: SMTP-out proto code  loaded
+Jun 12 21:29:55 mail amavis[431]: Pipe-out proto code  NOT loaded
+Jun 12 21:29:55 mail amavis[431]: BSMTP-out proto code NOT loaded
+Jun 12 21:29:55 mail amavis[431]: Local-out proto code loaded
+Jun 12 21:29:55 mail amavis[431]: OS_Fingerprint code  NOT loaded
+Jun 12 21:29:55 mail amavis[431]: ANTI-VIRUS code      NOT loaded
+Jun 12 21:29:55 mail amavis[431]: ANTI-SPAM code       NOT loaded
+Jun 12 21:29:55 mail amavis[431]: ANTI-SPAM-EXT code   NOT loaded
+Jun 12 21:29:55 mail amavis[431]: ANTI-SPAM-C code     NOT loaded
+Jun 12 21:29:55 mail amavis[431]: ANTI-SPAM-SA code    NOT loaded
+Jun 12 21:29:55 mail amavis[431]: Unpackers code       loaded
+Jun 12 21:29:55 mail amavis[431]: DKIM code            NOT loaded
+Jun 12 21:29:55 mail amavis[431]: Tools code           NOT loaded
+Jun 12 21:29:55 mail amavis[431]: Found $file            at /usr/bin/file
+Jun 12 21:29:55 mail amavis[431]: No $altermime,         not using it
+Jun 12 21:29:55 mail amavis[431]: Internal decoder for .mail
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .Z    at /bin/uncompress
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .gz   at /bin/gzip -d
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .bz2  at /bin/bzip2 -d
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .xz   at /usr/bin/xz -dc
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .lzma at /usr/bin/xz -dc --format=lzma
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .lrz  at /usr/bin/lrzip -q -k -d -o -
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .lzo  at /usr/bin/lzop -d
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .lz4  at /usr/bin/lz4c -d
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .rpm  at /usr/bin/rpm2cpio
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .cpio at /bin/pax
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .tar  at /bin/pax
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .deb  at /usr/bin/ar
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .rar  at /usr/bin/unrar-free
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .arj  at /usr/bin/arj
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .arc  at /usr/bin/nomarch
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .zoo  at /usr/bin/zoo
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .doc  at /usr/bin/ripole
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .cab  at /usr/bin/cabextract
+Jun 12 21:29:55 mail amavis[431]: Internal decoder for .tnef
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .zip  at /usr/bin/7za
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .kmz  at /usr/bin/7za
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .7z   at /usr/bin/7zr
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .jar  at /usr/bin/7z
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .swf  at /usr/bin/7z
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .lha  at /usr/bin/7z
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .iso  at /usr/bin/7z
+Jun 12 21:29:55 mail amavis[431]: Found decoder for    .exe  at /usr/bin/unrar-free; /usr/bin/arj
+Jun 12 21:29:55 mail amavis[431]: No decoder for       .F   
+Jun 12 21:29:55 mail amavis[431]: Deleting db files  in /var/lib/amavis/db
+Jun 12 21:29:55 mail amavis[431]: Creating db in /var/lib/amavis/db/; BerkeleyDB 0.55, libdb 5.3
+Jun 12 21:29:55 mail postfix/master[935]: daemon started -- version 3.1.14, configuration /etc/postfix
+Jun 12 21:30:39 mail dovecot: master: Warning: Killed with signal 15 (by pid=1 uid=0 code=kill)
+Jun 12 21:30:43 mail opendmarc[178]: OpenDMARC Filter: mi_stop=1
+Jun 12 21:30:43 mail opendmarc[178]: OpenDMARC Filter v1.3.2 terminating with status 0, errno = 0
+Jun 12 21:30:48 mail opendkim[172]: OpenDKIM Filter: mi_stop=1
+Jun 12 21:30:48 mail opendkim[172]: OpenDKIM Filter v2.11.0 terminating with status 0, errno = 0
+Jun 12 21:31:54 mail dovecot: master: Dovecot v2.3.10 (0da0eff44) starting up for imap, lmtp
+Jun 12 21:31:54 mail opendkim[165]: OpenDKIM Filter v2.11.0 starting (args: -f)
+Jun 12 21:31:54 mail opendmarc[172]: OpenDMARC Filter v1.3.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+Jun 12 21:31:54 mail opendmarc[172]: additional trusted authentication services: mail.localhost.com
+Jun 12 21:31:56 mail amavis[453]: starting. /usr/sbin/amavisd-new at mail.localhost.com amavisd-new-2.10.1 (20141025), Unicode aware
+Jun 12 21:31:56 mail amavis[453]: Net::Server: Group Not Defined.  Defaulting to EGID '111 111'
+Jun 12 21:31:56 mail amavis[453]: Net::Server: User Not Defined.  Defaulting to EUID '109'
+Jun 12 21:31:56 mail amavis[453]: Module Amavis::Conf        2.404
+Jun 12 21:31:56 mail amavis[453]: Module Archive::Zip        1.59
+Jun 12 21:31:56 mail amavis[453]: Module BerkeleyDB          0.55
+Jun 12 21:31:56 mail amavis[453]: Module Compress::Raw::Zlib 2.069
+Jun 12 21:31:56 mail amavis[453]: Module Compress::Zlib      2.069001
+Jun 12 21:31:56 mail amavis[453]: Module Digest::MD5         2.54
+Jun 12 21:31:56 mail amavis[453]: Module Encode              2.80_01
+Jun 12 21:31:56 mail amavis[453]: Module File::Temp          0.2304
+Jun 12 21:31:56 mail amavis[453]: Module IO::Socket::IP      0.37
+Jun 12 21:31:56 mail amavis[453]: Module MIME::Entity        5.508
+Jun 12 21:31:56 mail amavis[453]: Module MIME::Parser        5.508
+Jun 12 21:31:56 mail amavis[453]: Module MIME::Tools         5.508
+Jun 12 21:31:56 mail amavis[453]: Module Mail::Header        2.18
+Jun 12 21:31:56 mail amavis[453]: Module Mail::Internet      2.18
+Jun 12 21:31:56 mail amavis[453]: Module Net::LibIDN         0.12
+Jun 12 21:31:56 mail amavis[453]: Module Net::Server         2.008
+Jun 12 21:31:56 mail amavis[453]: Module Scalar::Util        1.4202
+Jun 12 21:31:56 mail amavis[453]: Module Socket              2.020_03
+Jun 12 21:31:56 mail amavis[453]: Module Time::HiRes         1.9733
+Jun 12 21:31:56 mail amavis[453]: Module Unix::Syslog        1.1
+Jun 12 21:31:56 mail amavis[453]: Amavis::ZMQ code     NOT loaded
+Jun 12 21:31:56 mail amavis[453]: Amavis::DB code      loaded
+Jun 12 21:31:56 mail amavis[453]: SQL base code        NOT loaded
+Jun 12 21:31:56 mail amavis[453]: SQL::Log code        NOT loaded
+Jun 12 21:31:56 mail amavis[453]: SQL::Quarantine      NOT loaded
+Jun 12 21:31:56 mail amavis[453]: Lookup::SQL code     NOT loaded
+Jun 12 21:31:56 mail amavis[453]: Lookup::LDAP code    NOT loaded
+Jun 12 21:31:56 mail amavis[453]: AM.PDP-in proto code loaded
+Jun 12 21:31:56 mail amavis[453]: SMTP-in proto code   loaded
+Jun 12 21:31:56 mail amavis[453]: Courier proto code   NOT loaded
+Jun 12 21:31:56 mail amavis[453]: SMTP-out proto code  loaded
+Jun 12 21:31:56 mail amavis[453]: Pipe-out proto code  NOT loaded
+Jun 12 21:31:56 mail amavis[453]: BSMTP-out proto code NOT loaded
+Jun 12 21:31:56 mail amavis[453]: Local-out proto code loaded
+Jun 12 21:31:56 mail amavis[453]: OS_Fingerprint code  NOT loaded
+Jun 12 21:31:56 mail amavis[453]: ANTI-VIRUS code      NOT loaded
+Jun 12 21:31:56 mail amavis[453]: ANTI-SPAM code       NOT loaded
+Jun 12 21:31:56 mail amavis[453]: ANTI-SPAM-EXT code   NOT loaded
+Jun 12 21:31:56 mail amavis[453]: ANTI-SPAM-C code     NOT loaded
+Jun 12 21:31:56 mail amavis[453]: ANTI-SPAM-SA code    NOT loaded
+Jun 12 21:31:56 mail amavis[453]: Unpackers code       loaded
+Jun 12 21:31:56 mail amavis[453]: DKIM code            NOT loaded
+Jun 12 21:31:56 mail amavis[453]: Tools code           NOT loaded
+Jun 12 21:31:56 mail amavis[453]: Found $file            at /usr/bin/file
+Jun 12 21:31:56 mail amavis[453]: No $altermime,         not using it
+Jun 12 21:31:56 mail amavis[453]: Internal decoder for .mail
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .Z    at /bin/uncompress
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .gz   at /bin/gzip -d
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .bz2  at /bin/bzip2 -d
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .xz   at /usr/bin/xz -dc
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .lzma at /usr/bin/xz -dc --format=lzma
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .lrz  at /usr/bin/lrzip -q -k -d -o -
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .lzo  at /usr/bin/lzop -d
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .lz4  at /usr/bin/lz4c -d
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .rpm  at /usr/bin/rpm2cpio
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .cpio at /bin/pax
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .tar  at /bin/pax
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .deb  at /usr/bin/ar
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .rar  at /usr/bin/unrar-free
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .arj  at /usr/bin/arj
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .arc  at /usr/bin/nomarch
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .zoo  at /usr/bin/zoo
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .doc  at /usr/bin/ripole
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .cab  at /usr/bin/cabextract
+Jun 12 21:31:56 mail amavis[453]: Internal decoder for .tnef
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .zip  at /usr/bin/7za
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .kmz  at /usr/bin/7za
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .7z   at /usr/bin/7zr
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .jar  at /usr/bin/7z
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .swf  at /usr/bin/7z
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .lha  at /usr/bin/7z
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .iso  at /usr/bin/7z
+Jun 12 21:31:56 mail amavis[453]: Found decoder for    .exe  at /usr/bin/unrar-free; /usr/bin/arj
+Jun 12 21:31:56 mail amavis[453]: No decoder for       .F   
+Jun 12 21:31:56 mail amavis[453]: Deleting db files __db.002,nanny.db,__db.003,__db.001,snmp.db in /var/lib/amavis/db
+Jun 12 21:31:56 mail amavis[453]: Creating db in /var/lib/amavis/db/; BerkeleyDB 0.55, libdb 5.3
+Jun 12 21:31:56 mail postfix/master[927]: daemon started -- version 3.1.14, configuration /etc/postfix
+Jun 12 22:17:35 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=10165, session=<sZG7ceqn/MOsFQAB>
+Jun 12 22:17:35 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=10164, session=<UJG7ceqn8sOsFQAB>
+Jun 12 22:17:35 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=10166, session=<FLG7ceqn9sOsFQAB>
+Jun 12 22:17:35 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=10167, session=<Xba7ceqn/sOsFQAB>
+Jun 12 22:17:47 mail postfix/smtps/smtpd[10205]: connect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]
+Jun 12 22:17:47 mail postfix/smtps/smtpd[10205]: Anonymous TLS connection established from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]: TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)
+Jun 12 22:17:47 mail opendmarc[172]: ignoring connection from distributed-computing-course_notification_center_1.distributed-computing-course_default
+Jun 12 22:17:47 mail postfix/smtps/smtpd[10205]: 25E65604FC4: client=distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5], sasl_method=PLAIN, sasl_username=0@localhost.com
+Jun 12 22:17:47 mail postfix/sender-cleanup/cleanup[10209]: 25E65604FC4: replace: header Mime-Version: 1.0 from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]; from=<0@localhost.com> to=<1@localhost.com> proto=ESMTP helo=<localhost>: Mime-Version: 1.0
+Jun 12 22:17:47 mail postfix/sender-cleanup/cleanup[10209]: 25E65604FC4: message-id=<>
+Jun 12 22:17:47 mail opendkim[165]: 25E65604FC4: no signing table match for '0@localhost.com'
+Jun 12 22:17:47 mail postfix/qmgr[930]: 25E65604FC4: from=<0@localhost.com>, size=633, nrcpt=1 (queue active)
+Jun 12 22:17:47 mail postfix/smtps/smtpd[10205]: disconnect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5] ehlo=1 auth=1 mail=1 rcpt=1 data=1 quit=1 commands=6
+Jun 12 22:17:47 mail postfix/smtpd[10212]: connect from localhost[127.0.0.1]
+Jun 12 22:17:47 mail postfix/smtpd[10212]: 36348604FCA: client=localhost[127.0.0.1]
+Jun 12 22:17:47 mail postfix/cleanup[10213]: 36348604FCA: message-id=<20200612221747.36348604FCA@mail.localhost.com>
+Jun 12 22:17:47 mail postfix/qmgr[930]: 36348604FCA: from=<0@localhost.com>, size=867, nrcpt=1 (queue active)
+Jun 12 22:17:47 mail amavis[696]: (00696-01) Passed CLEAN {RelayedInternal}, LOCAL [172.21.0.5]:34600 <0@localhost.com> -> <1@localhost.com>, Queue-ID: 25E65604FC4, mail_id: UqSld75f1RdU, Hits: -, size: 599, queued_as: 36348604FCA, 65 ms
+Jun 12 22:17:47 mail postfix/smtp[10210]: 25E65604FC4: to=<1@localhost.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=0.09, delays=0.02/0.01/0/0.07, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 36348604FCA)
+Jun 12 22:17:47 mail postfix/qmgr[930]: 25E65604FC4: removed
+Jun 12 22:17:47 mail dovecot: lmtp(10215): Connect from local
+Jun 12 22:17:47 mail dovecot: lmtp(1@localhost.com)<10215><x/uSDwv/417nJwAA2qOm9g>: msgid=<20200612221747.36348604FCA@mail.localhost.com>: saved mail to INBOX
+Jun 12 22:17:47 mail postfix/lmtp[10214]: 36348604FCA: to=<1@localhost.com>, relay=mail.localhost.com[/var/run/dovecot/lmtp], delay=0.07, delays=0.01/0.01/0.03/0.03, dsn=2.0.0, status=sent (250 2.0.0 <1@localhost.com> x/uSDwv/417nJwAA2qOm9g Saved)
+Jun 12 22:17:47 mail dovecot: lmtp(10215): Disconnect from local: Client has quit the connection (state=READY)
+Jun 12 22:17:47 mail postfix/qmgr[930]: 36348604FCA: removed
+Jun 12 22:18:41 mail postfix/smtps/smtpd[10205]: connect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]
+Jun 12 22:18:41 mail postfix/smtps/smtpd[10205]: Anonymous TLS connection established from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]: TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)
+Jun 12 22:18:41 mail opendmarc[172]: ignoring connection from distributed-computing-course_notification_center_1.distributed-computing-course_default
+Jun 12 22:18:41 mail postfix/smtps/smtpd[10205]: 22D7B604FC4: client=distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5], sasl_method=PLAIN, sasl_username=0@localhost.com
+Jun 12 22:18:41 mail postfix/sender-cleanup/cleanup[10209]: 22D7B604FC4: replace: header Mime-Version: 1.0 from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]; from=<0@localhost.com> to=<2@localhost.com> proto=ESMTP helo=<localhost>: Mime-Version: 1.0
+Jun 12 22:18:41 mail postfix/sender-cleanup/cleanup[10209]: 22D7B604FC4: message-id=<>
+Jun 12 22:18:41 mail opendkim[165]: 22D7B604FC4: no signing table match for '0@localhost.com'
+Jun 12 22:18:41 mail postfix/qmgr[930]: 22D7B604FC4: from=<0@localhost.com>, size=633, nrcpt=1 (queue active)
+Jun 12 22:18:41 mail postfix/smtps/smtpd[10205]: disconnect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5] ehlo=1 auth=1 mail=1 rcpt=1 data=1 quit=1 commands=6
+Jun 12 22:18:41 mail postfix/smtpd[10398]: connect from localhost[127.0.0.1]
+Jun 12 22:18:41 mail postfix/smtpd[10398]: 2EC88604FCE: client=localhost[127.0.0.1]
+Jun 12 22:18:41 mail postfix/cleanup[10213]: 2EC88604FCE: message-id=<20200612221841.2EC88604FCE@mail.localhost.com>
+Jun 12 22:18:41 mail postfix/qmgr[930]: 2EC88604FCE: from=<0@localhost.com>, size=867, nrcpt=1 (queue active)
+Jun 12 22:18:41 mail dovecot: lmtp(10215): Connect from local
+Jun 12 22:18:41 mail amavis[697]: (00697-01) Passed CLEAN {RelayedInternal}, LOCAL [172.21.0.5]:34620 <0@localhost.com> -> <2@localhost.com>, Queue-ID: 22D7B604FC4, mail_id: NrGGm8yjTGgY, Hits: -, size: 599, queued_as: 2EC88604FCE, 49 ms
+Jun 12 22:18:41 mail postfix/smtp[10210]: 22D7B604FC4: to=<2@localhost.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=0.06, delays=0.01/0/0/0.05, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 2EC88604FCE)
+Jun 12 22:18:41 mail postfix/qmgr[930]: 22D7B604FC4: removed
+Jun 12 22:18:41 mail dovecot: lmtp(2@localhost.com)<10215><ELa1C0H/417nJwAA2qOm9g>: msgid=<20200612221841.2EC88604FCE@mail.localhost.com>: saved mail to INBOX
+Jun 12 22:18:41 mail postfix/lmtp[10214]: 2EC88604FCE: to=<2@localhost.com>, relay=mail.localhost.com[/var/run/dovecot/lmtp], delay=0.02, delays=0/0/0/0.01, dsn=2.0.0, status=sent (250 2.0.0 <2@localhost.com> ELa1C0H/417nJwAA2qOm9g Saved)
+Jun 12 22:18:41 mail dovecot: lmtp(10215): Disconnect from local: Client has quit the connection (state=READY)
+Jun 12 22:18:41 mail postfix/qmgr[930]: 2EC88604FCE: removed
+Jun 12 22:22:47 mail postfix/smtpd[10212]: timeout after END-OF-MESSAGE from localhost[127.0.0.1]
+Jun 12 22:22:47 mail postfix/smtpd[10212]: disconnect from localhost[127.0.0.1] ehlo=1 mail=1 rcpt=1 data=1 commands=4
+Jun 12 22:23:41 mail postfix/smtpd[10398]: timeout after END-OF-MESSAGE from localhost[127.0.0.1]
+Jun 12 22:23:41 mail postfix/smtpd[10398]: disconnect from localhost[127.0.0.1] ehlo=1 mail=1 rcpt=1 data=1 commands=4
+Jun 12 22:49:08 mail dovecot: imap(4@localhost.com)<10166><FLG7ceqn9sOsFQAB>: Connection closed (IDLE running for 0.001 + waiting input for 29.967 secs, 2 B in + 10 B out, state=wait-input) in=4162 out=19633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 12 22:49:08 mail dovecot: imap(5@localhost.com)<10167><Xba7ceqn/sOsFQAB>: Connection closed (IDLE running for 0.001 + waiting input for 29.967 secs, 2 B in + 10 B out, state=wait-input) in=4162 out=19641 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 12 22:49:08 mail dovecot: imap(2@localhost.com)<10165><sZG7ceqn/MOsFQAB>: Connection closed (IDLE finished 29.967 secs ago) in=4453 out=22593 deleted=0 expunged=0 trashed=0 hdr_count=1 hdr_bytes=723 body_count=1 body_bytes=1086
+Jun 12 22:49:08 mail dovecot: imap(3@localhost.com)<10164><UJG7ceqn8sOsFQAB>: Connection closed (IDLE running for 0.001 + waiting input for 29.968 secs, 2 B in + 10 B out, state=wait-input) in=4175 out=19689 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 05:25:10 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=16602, session=<G8LkavCn9sesFQAB>
+Jun 13 05:25:10 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=16603, session=<09DkavCn9MesFQAB>
+Jun 13 05:25:10 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=16604, session=<7N/kavCn/MesFQAB>
+Jun 13 05:25:10 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=16605, session=<ze3kavCn/sesFQAB>
+Jun 13 05:58:41 mail dovecot: master: Warning: Killed with signal 15 (by pid=1 uid=0 code=kill)
+Jun 13 05:58:41 mail dovecot: imap(2@localhost.com)<16603><09DkavCn9MesFQAB>: Server shutting down. in=3365 out=18051 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 05:58:41 mail dovecot: imap(5@localhost.com)<16604><7N/kavCn/MesFQAB>: Server shutting down. in=3365 out=18043 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 05:58:41 mail dovecot: imap(3@localhost.com)<16602><G8LkavCn9sesFQAB>: Server shutting down. in=3365 out=18027 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 05:58:41 mail dovecot: imap(4@localhost.com)<16605><ze3kavCn/sesFQAB>: Server shutting down. in=3365 out=18083 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 05:58:43 mail opendmarc[172]: OpenDMARC Filter: mi_stop=1
+Jun 13 05:58:43 mail opendmarc[172]: OpenDMARC Filter v1.3.2 terminating with status 0, errno = 0
+Jun 13 05:58:48 mail opendkim[165]: OpenDKIM Filter: mi_stop=1
+Jun 13 05:58:48 mail opendkim[165]: OpenDKIM Filter v2.11.0 terminating with status 0, errno = 0
+Jun 13 06:01:14 mail dovecot: master: Dovecot v2.3.10 (0da0eff44) starting up for imap, lmtp
+Jun 13 06:01:14 mail opendkim[165]: OpenDKIM Filter v2.11.0 starting (args: -f)
+Jun 13 06:01:14 mail opendmarc[171]: OpenDMARC Filter v1.3.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+Jun 13 06:01:14 mail opendmarc[171]: additional trusted authentication services: mail.localhost.com
+Jun 13 06:01:16 mail amavis[444]: starting. /usr/sbin/amavisd-new at mail.localhost.com amavisd-new-2.10.1 (20141025), Unicode aware
+Jun 13 06:01:16 mail amavis[444]: Net::Server: Group Not Defined.  Defaulting to EGID '111 111'
+Jun 13 06:01:16 mail amavis[444]: Net::Server: User Not Defined.  Defaulting to EUID '109'
+Jun 13 06:01:16 mail amavis[444]: Module Amavis::Conf        2.404
+Jun 13 06:01:16 mail amavis[444]: Module Archive::Zip        1.59
+Jun 13 06:01:16 mail amavis[444]: Module BerkeleyDB          0.55
+Jun 13 06:01:16 mail amavis[444]: Module Compress::Raw::Zlib 2.069
+Jun 13 06:01:16 mail amavis[444]: Module Compress::Zlib      2.069001
+Jun 13 06:01:16 mail amavis[444]: Module Digest::MD5         2.54
+Jun 13 06:01:16 mail amavis[444]: Module Encode              2.80_01
+Jun 13 06:01:16 mail amavis[444]: Module File::Temp          0.2304
+Jun 13 06:01:16 mail amavis[444]: Module IO::Socket::IP      0.37
+Jun 13 06:01:16 mail amavis[444]: Module MIME::Entity        5.508
+Jun 13 06:01:16 mail amavis[444]: Module MIME::Parser        5.508
+Jun 13 06:01:16 mail amavis[444]: Module MIME::Tools         5.508
+Jun 13 06:01:16 mail amavis[444]: Module Mail::Header        2.18
+Jun 13 06:01:16 mail amavis[444]: Module Mail::Internet      2.18
+Jun 13 06:01:16 mail amavis[444]: Module Net::LibIDN         0.12
+Jun 13 06:01:16 mail amavis[444]: Module Net::Server         2.008
+Jun 13 06:01:16 mail amavis[444]: Module Scalar::Util        1.4202
+Jun 13 06:01:16 mail amavis[444]: Module Socket              2.020_03
+Jun 13 06:01:16 mail amavis[444]: Module Time::HiRes         1.9733
+Jun 13 06:01:16 mail amavis[444]: Module Unix::Syslog        1.1
+Jun 13 06:01:16 mail amavis[444]: Amavis::ZMQ code     NOT loaded
+Jun 13 06:01:16 mail amavis[444]: Amavis::DB code      loaded
+Jun 13 06:01:16 mail amavis[444]: SQL base code        NOT loaded
+Jun 13 06:01:16 mail amavis[444]: SQL::Log code        NOT loaded
+Jun 13 06:01:16 mail amavis[444]: SQL::Quarantine      NOT loaded
+Jun 13 06:01:16 mail amavis[444]: Lookup::SQL code     NOT loaded
+Jun 13 06:01:16 mail amavis[444]: Lookup::LDAP code    NOT loaded
+Jun 13 06:01:16 mail amavis[444]: AM.PDP-in proto code loaded
+Jun 13 06:01:16 mail amavis[444]: SMTP-in proto code   loaded
+Jun 13 06:01:16 mail amavis[444]: Courier proto code   NOT loaded
+Jun 13 06:01:16 mail amavis[444]: SMTP-out proto code  loaded
+Jun 13 06:01:16 mail amavis[444]: Pipe-out proto code  NOT loaded
+Jun 13 06:01:16 mail amavis[444]: BSMTP-out proto code NOT loaded
+Jun 13 06:01:16 mail amavis[444]: Local-out proto code loaded
+Jun 13 06:01:16 mail amavis[444]: OS_Fingerprint code  NOT loaded
+Jun 13 06:01:16 mail amavis[444]: ANTI-VIRUS code      NOT loaded
+Jun 13 06:01:16 mail amavis[444]: ANTI-SPAM code       NOT loaded
+Jun 13 06:01:16 mail amavis[444]: ANTI-SPAM-EXT code   NOT loaded
+Jun 13 06:01:16 mail amavis[444]: ANTI-SPAM-C code     NOT loaded
+Jun 13 06:01:16 mail amavis[444]: ANTI-SPAM-SA code    NOT loaded
+Jun 13 06:01:16 mail amavis[444]: Unpackers code       loaded
+Jun 13 06:01:16 mail amavis[444]: DKIM code            NOT loaded
+Jun 13 06:01:16 mail amavis[444]: Tools code           NOT loaded
+Jun 13 06:01:16 mail amavis[444]: Found $file            at /usr/bin/file
+Jun 13 06:01:16 mail amavis[444]: No $altermime,         not using it
+Jun 13 06:01:16 mail amavis[444]: Internal decoder for .mail
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .Z    at /bin/uncompress
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .gz   at /bin/gzip -d
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .bz2  at /bin/bzip2 -d
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .xz   at /usr/bin/xz -dc
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .lzma at /usr/bin/xz -dc --format=lzma
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .lrz  at /usr/bin/lrzip -q -k -d -o -
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .lzo  at /usr/bin/lzop -d
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .lz4  at /usr/bin/lz4c -d
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .rpm  at /usr/bin/rpm2cpio
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .cpio at /bin/pax
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .tar  at /bin/pax
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .deb  at /usr/bin/ar
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .rar  at /usr/bin/unrar-free
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .arj  at /usr/bin/arj
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .arc  at /usr/bin/nomarch
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .zoo  at /usr/bin/zoo
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .doc  at /usr/bin/ripole
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .cab  at /usr/bin/cabextract
+Jun 13 06:01:16 mail amavis[444]: Internal decoder for .tnef
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .zip  at /usr/bin/7za
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .kmz  at /usr/bin/7za
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .7z   at /usr/bin/7zr
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .jar  at /usr/bin/7z
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .swf  at /usr/bin/7z
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .lha  at /usr/bin/7z
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .iso  at /usr/bin/7z
+Jun 13 06:01:16 mail amavis[444]: Found decoder for    .exe  at /usr/bin/unrar-free; /usr/bin/arj
+Jun 13 06:01:16 mail amavis[444]: No decoder for       .F   
+Jun 13 06:01:16 mail amavis[444]: Deleting db files __db.002,nanny.db,__db.003,__db.001,snmp.db in /var/lib/amavis/db
+Jun 13 06:01:16 mail amavis[444]: Creating db in /var/lib/amavis/db/; BerkeleyDB 0.55, libdb 5.3
+Jun 13 06:01:16 mail postfix/master[926]: daemon started -- version 3.1.14, configuration /etc/postfix
+Jun 13 06:02:10 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1094, session=<aB047/CndMqsFQAB>
+Jun 13 06:02:10 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1095, session=<vx047/CneMqsFQAB>
+Jun 13 06:02:10 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1096, session=<fU047/CngMqsFQAB>
+Jun 13 06:02:11 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1097, session=<k0447/CnfMqsFQAB>
+Jun 13 06:05:58 mail postfix/smtps/smtpd[1865]: connect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.6]
+Jun 13 06:05:58 mail postfix/smtps/smtpd[1865]: Anonymous TLS connection established from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.6]: TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)
+Jun 13 06:05:58 mail postfix/smtps/smtpd[1865]: 5762E604F38: client=distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.6], sasl_method=PLAIN, sasl_username=0@localhost.com
+Jun 13 06:05:58 mail postfix/sender-cleanup/cleanup[1871]: 5762E604F38: replace: header Mime-Version: 1.0 from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.6]; from=<0@localhost.com> to=<1@localhost.com> proto=ESMTP helo=<localhost>: Mime-Version: 1.0
+Jun 13 06:05:58 mail postfix/sender-cleanup/cleanup[1871]: 5762E604F38: message-id=<>
+Jun 13 06:05:58 mail opendkim[165]: 5762E604F38: no signing table match for '0@localhost.com'
+Jun 13 06:05:58 mail postfix/qmgr[929]: 5762E604F38: from=<0@localhost.com>, size=633, nrcpt=1 (queue active)
+Jun 13 06:05:58 mail postfix/smtps/smtpd[1865]: disconnect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.6] ehlo=1 auth=1 mail=1 rcpt=1 data=1 quit=1 commands=6
+Jun 13 06:05:58 mail postfix/smtpd[1874]: connect from localhost[127.0.0.1]
+Jun 13 06:05:58 mail postfix/smtpd[1874]: 63B61604F39: client=localhost[127.0.0.1]
+Jun 13 06:05:58 mail postfix/cleanup[1875]: 63B61604F39: message-id=<20200613060558.63B61604F39@mail.localhost.com>
+Jun 13 06:05:58 mail postfix/qmgr[929]: 63B61604F39: from=<0@localhost.com>, size=867, nrcpt=1 (queue active)
+Jun 13 06:05:58 mail amavis[714]: (00714-01) Passed CLEAN {RelayedInternal}, LOCAL [172.21.0.6]:40170 <0@localhost.com> -> <1@localhost.com>, Queue-ID: 5762E604F38, mail_id: HUi5zzZdAnuw, Hits: -, size: 599, queued_as: 63B61604F39, 46 ms
+Jun 13 06:05:58 mail postfix/smtp[1872]: 5762E604F38: to=<1@localhost.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=0.07, delays=0.01/0.01/0/0.05, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 63B61604F39)
+Jun 13 06:05:58 mail postfix/qmgr[929]: 5762E604F38: removed
+Jun 13 06:05:58 mail dovecot: lmtp(1877): Connect from local
+Jun 13 06:05:58 mail dovecot: lmtp(1@localhost.com)<1877><jtOHGcZs5F5VBwAA2qOm9g>: msgid=<20200613060558.63B61604F39@mail.localhost.com>: saved mail to INBOX
+Jun 13 06:05:58 mail dovecot: lmtp(1877): Disconnect from local: Client has quit the connection (state=READY)
+Jun 13 06:05:58 mail postfix/lmtp[1876]: 63B61604F39: to=<1@localhost.com>, relay=mail.localhost.com[/var/run/dovecot/lmtp], delay=0.03, delays=0.01/0.01/0.01/0.01, dsn=2.0.0, status=sent (250 2.0.0 <1@localhost.com> jtOHGcZs5F5VBwAA2qOm9g Saved)
+Jun 13 06:05:58 mail postfix/qmgr[929]: 63B61604F39: removed
+Jun 13 06:07:33 mail postfix/smtps/smtpd[1865]: connect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.6]
+Jun 13 06:07:33 mail postfix/smtps/smtpd[1865]: Anonymous TLS connection established from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.6]: TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)
+Jun 13 06:07:33 mail postfix/smtps/smtpd[1865]: 78704604F38: client=distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.6], sasl_method=PLAIN, sasl_username=0@localhost.com
+Jun 13 06:07:33 mail postfix/sender-cleanup/cleanup[1871]: 78704604F38: replace: header Mime-Version: 1.0 from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.6]; from=<0@localhost.com> to=<2@localhost.com> proto=ESMTP helo=<localhost>: Mime-Version: 1.0
+Jun 13 06:07:33 mail postfix/sender-cleanup/cleanup[1871]: 78704604F38: message-id=<>
+Jun 13 06:07:33 mail opendkim[165]: 78704604F38: no signing table match for '0@localhost.com'
+Jun 13 06:07:33 mail postfix/qmgr[929]: 78704604F38: from=<0@localhost.com>, size=633, nrcpt=1 (queue active)
+Jun 13 06:07:33 mail postfix/smtps/smtpd[1865]: disconnect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.6] ehlo=1 auth=1 mail=1 rcpt=1 data=1 quit=1 commands=6
+Jun 13 06:07:33 mail postfix/smtpd[2202]: connect from localhost[127.0.0.1]
+Jun 13 06:07:33 mail postfix/smtpd[2202]: 8579B604F39: client=localhost[127.0.0.1]
+Jun 13 06:07:33 mail postfix/cleanup[1875]: 8579B604F39: message-id=<20200613060733.8579B604F39@mail.localhost.com>
+Jun 13 06:07:33 mail postfix/qmgr[929]: 8579B604F39: from=<0@localhost.com>, size=867, nrcpt=1 (queue active)
+Jun 13 06:07:33 mail amavis[716]: (00716-01) Passed CLEAN {RelayedInternal}, LOCAL [172.21.0.6]:40218 <0@localhost.com> -> <2@localhost.com>, Queue-ID: 78704604F38, mail_id: Jptrwmhh7RpM, Hits: -, size: 599, queued_as: 8579B604F39, 55 ms
+Jun 13 06:07:33 mail postfix/smtp[1872]: 78704604F38: to=<2@localhost.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=0.07, delays=0.01/0/0/0.06, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 8579B604F39)
+Jun 13 06:07:33 mail postfix/qmgr[929]: 78704604F38: removed
+Jun 13 06:07:33 mail dovecot: lmtp(2203): Connect from local
+Jun 13 06:07:33 mail dovecot: lmtp(2@localhost.com)<2203><3k63ISVt5F6bCAAA2qOm9g>: msgid=<20200613060733.8579B604F39@mail.localhost.com>: saved mail to INBOX
+Jun 13 06:07:33 mail postfix/lmtp[1876]: 8579B604F39: to=<2@localhost.com>, relay=mail.localhost.com[/var/run/dovecot/lmtp], delay=0.03, delays=0/0/0.01/0.01, dsn=2.0.0, status=sent (250 2.0.0 <2@localhost.com> 3k63ISVt5F6bCAAA2qOm9g Saved)
+Jun 13 06:07:33 mail dovecot: lmtp(2203): Disconnect from local: Client has quit the connection (state=READY)
+Jun 13 06:07:33 mail postfix/qmgr[929]: 8579B604F39: removed
+Jun 13 06:07:53 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=2273, session=<m7CmA/GnGMusFQAB>
+Jun 13 06:09:10 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=2533, session=<VGFACPGnSMusFQAB>
+Jun 13 06:10:53 mail postfix/anvil[1869]: statistics: max connection rate 1/60s for (smtps:172.21.0.6) at Jun 13 06:05:58
+Jun 13 06:10:53 mail postfix/anvil[1869]: statistics: max connection count 1 for (smtps:172.21.0.6) at Jun 13 06:05:58
+Jun 13 06:10:53 mail postfix/anvil[1869]: statistics: max cache size 1 at Jun 13 06:05:58
+Jun 13 06:10:58 mail postfix/smtpd[1874]: timeout after END-OF-MESSAGE from localhost[127.0.0.1]
+Jun 13 06:10:58 mail postfix/smtpd[1874]: disconnect from localhost[127.0.0.1] ehlo=1 mail=1 rcpt=1 data=1 commands=4
+Jun 13 06:12:33 mail postfix/smtpd[2202]: timeout after END-OF-MESSAGE from localhost[127.0.0.1]
+Jun 13 06:12:33 mail postfix/smtpd[2202]: disconnect from localhost[127.0.0.1] ehlo=1 mail=1 rcpt=1 data=1 commands=4
+Jun 13 06:18:10 mail postfix/pickup[928]: 2367B604F38: uid=109 from=<amavis>
+Jun 13 06:18:10 mail postfix/cleanup[4368]: 2367B604F38: message-id=<20200613061810.2367B604F38@mail.localhost.com>
+Jun 13 06:18:10 mail opendkim[165]: 2367B604F38: localhost [127.0.0.1] not internal
+Jun 13 06:18:10 mail opendkim[165]: 2367B604F38: not authenticated
+Jun 13 06:18:10 mail postfix/qmgr[929]: 2367B604F38: from=<amavis@mail.localhost.com>, size=748, nrcpt=1 (queue active)
+Jun 13 06:18:10 mail postfix/local[4370]: 2367B604F38: to=<amavis@mail.localhost.com>, orig_to=<amavis>, relay=local, delay=0.06, delays=0.04/0.02/0/0, dsn=2.0.0, status=sent (delivered to mailbox)
+Jun 13 06:18:10 mail postfix/qmgr[929]: 2367B604F38: removed
+Jun 13 06:25:21 mail dovecot: master: Warning: Killed with signal 15 (by pid=1 uid=0 code=kill)
+Jun 13 06:25:21 mail dovecot: imap(1@localhost.com)<2533><VGFACPGnSMusFQAB>: Server shutting down. in=422 out=1688 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:25:21 mail dovecot: imap(3@localhost.com)<1094><aB047/CndMqsFQAB>: Server shutting down. in=3886 out=14620 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:25:21 mail dovecot: imap(5@localhost.com)<1095><vx047/CneMqsFQAB>: Server shutting down. in=3886 out=14612 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:25:21 mail dovecot: imap(2@localhost.com)<1097><k0447/CnfMqsFQAB>: Server shutting down. in=3086 out=16088 deleted=0 expunged=0 trashed=0 hdr_count=1 hdr_bytes=723 body_count=1 body_bytes=1086
+Jun 13 06:25:21 mail dovecot: imap(4@localhost.com)<1096><fU047/CngMqsFQAB>: Server shutting down. in=3886 out=14612 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:25:22 mail dovecot: imap(1@localhost.com)<2273><m7CmA/GnGMusFQAB>: Server shutting down. in=2371 out=15682 deleted=0 expunged=0 trashed=0 hdr_count=2 hdr_bytes=1446 body_count=2 body_bytes=2172
+Jun 13 06:25:24 mail opendmarc[171]: OpenDMARC Filter: mi_stop=1
+Jun 13 06:25:24 mail opendmarc[171]: OpenDMARC Filter v1.3.2 terminating with status 0, errno = 0
+Jun 13 06:25:25 mail opendkim[165]: OpenDKIM Filter: mi_stop=1
+Jun 13 06:25:25 mail opendkim[165]: OpenDKIM Filter v2.11.0 terminating with status 0, errno = 0
+Jun 13 06:26:49 mail dovecot: master: Dovecot v2.3.10 (0da0eff44) starting up for imap, lmtp
+Jun 13 06:26:49 mail opendkim[165]: OpenDKIM Filter v2.11.0 starting (args: -f)
+Jun 13 06:26:50 mail opendmarc[172]: OpenDMARC Filter v1.3.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+Jun 13 06:26:50 mail opendmarc[172]: additional trusted authentication services: mail.localhost.com
+Jun 13 06:26:51 mail amavis[439]: starting. /usr/sbin/amavisd-new at mail.localhost.com amavisd-new-2.10.1 (20141025), Unicode aware
+Jun 13 06:26:51 mail amavis[439]: Net::Server: Group Not Defined.  Defaulting to EGID '111 111'
+Jun 13 06:26:51 mail amavis[439]: Net::Server: User Not Defined.  Defaulting to EUID '109'
+Jun 13 06:26:51 mail amavis[439]: Module Amavis::Conf        2.404
+Jun 13 06:26:51 mail amavis[439]: Module Archive::Zip        1.59
+Jun 13 06:26:51 mail amavis[439]: Module BerkeleyDB          0.55
+Jun 13 06:26:51 mail amavis[439]: Module Compress::Raw::Zlib 2.069
+Jun 13 06:26:51 mail amavis[439]: Module Compress::Zlib      2.069001
+Jun 13 06:26:51 mail amavis[439]: Module Digest::MD5         2.54
+Jun 13 06:26:51 mail amavis[439]: Module Encode              2.80_01
+Jun 13 06:26:51 mail amavis[439]: Module File::Temp          0.2304
+Jun 13 06:26:51 mail amavis[439]: Module IO::Socket::IP      0.37
+Jun 13 06:26:51 mail amavis[439]: Module MIME::Entity        5.508
+Jun 13 06:26:51 mail amavis[439]: Module MIME::Parser        5.508
+Jun 13 06:26:51 mail amavis[439]: Module MIME::Tools         5.508
+Jun 13 06:26:51 mail amavis[439]: Module Mail::Header        2.18
+Jun 13 06:26:51 mail amavis[439]: Module Mail::Internet      2.18
+Jun 13 06:26:51 mail amavis[439]: Module Net::LibIDN         0.12
+Jun 13 06:26:51 mail amavis[439]: Module Net::Server         2.008
+Jun 13 06:26:51 mail amavis[439]: Module Scalar::Util        1.4202
+Jun 13 06:26:51 mail amavis[439]: Module Socket              2.020_03
+Jun 13 06:26:51 mail amavis[439]: Module Time::HiRes         1.9733
+Jun 13 06:26:51 mail amavis[439]: Module Unix::Syslog        1.1
+Jun 13 06:26:51 mail amavis[439]: Amavis::ZMQ code     NOT loaded
+Jun 13 06:26:51 mail amavis[439]: Amavis::DB code      loaded
+Jun 13 06:26:51 mail amavis[439]: SQL base code        NOT loaded
+Jun 13 06:26:51 mail amavis[439]: SQL::Log code        NOT loaded
+Jun 13 06:26:51 mail amavis[439]: SQL::Quarantine      NOT loaded
+Jun 13 06:26:51 mail amavis[439]: Lookup::SQL code     NOT loaded
+Jun 13 06:26:51 mail amavis[439]: Lookup::LDAP code    NOT loaded
+Jun 13 06:26:51 mail amavis[439]: AM.PDP-in proto code loaded
+Jun 13 06:26:51 mail amavis[439]: SMTP-in proto code   loaded
+Jun 13 06:26:51 mail amavis[439]: Courier proto code   NOT loaded
+Jun 13 06:26:51 mail amavis[439]: SMTP-out proto code  loaded
+Jun 13 06:26:51 mail amavis[439]: Pipe-out proto code  NOT loaded
+Jun 13 06:26:51 mail amavis[439]: BSMTP-out proto code NOT loaded
+Jun 13 06:26:51 mail amavis[439]: Local-out proto code loaded
+Jun 13 06:26:51 mail amavis[439]: OS_Fingerprint code  NOT loaded
+Jun 13 06:26:51 mail amavis[439]: ANTI-VIRUS code      NOT loaded
+Jun 13 06:26:51 mail amavis[439]: ANTI-SPAM code       NOT loaded
+Jun 13 06:26:51 mail amavis[439]: ANTI-SPAM-EXT code   NOT loaded
+Jun 13 06:26:51 mail amavis[439]: ANTI-SPAM-C code     NOT loaded
+Jun 13 06:26:51 mail amavis[439]: ANTI-SPAM-SA code    NOT loaded
+Jun 13 06:26:51 mail amavis[439]: Unpackers code       loaded
+Jun 13 06:26:51 mail amavis[439]: DKIM code            NOT loaded
+Jun 13 06:26:51 mail amavis[439]: Tools code           NOT loaded
+Jun 13 06:26:51 mail amavis[439]: Found $file            at /usr/bin/file
+Jun 13 06:26:51 mail amavis[439]: No $altermime,         not using it
+Jun 13 06:26:51 mail amavis[439]: Internal decoder for .mail
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .Z    at /bin/uncompress
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .gz   at /bin/gzip -d
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .bz2  at /bin/bzip2 -d
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .xz   at /usr/bin/xz -dc
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .lzma at /usr/bin/xz -dc --format=lzma
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .lrz  at /usr/bin/lrzip -q -k -d -o -
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .lzo  at /usr/bin/lzop -d
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .lz4  at /usr/bin/lz4c -d
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .rpm  at /usr/bin/rpm2cpio
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .cpio at /bin/pax
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .tar  at /bin/pax
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .deb  at /usr/bin/ar
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .rar  at /usr/bin/unrar-free
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .arj  at /usr/bin/arj
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .arc  at /usr/bin/nomarch
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .zoo  at /usr/bin/zoo
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .doc  at /usr/bin/ripole
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .cab  at /usr/bin/cabextract
+Jun 13 06:26:51 mail amavis[439]: Internal decoder for .tnef
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .zip  at /usr/bin/7za
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .kmz  at /usr/bin/7za
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .7z   at /usr/bin/7zr
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .jar  at /usr/bin/7z
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .swf  at /usr/bin/7z
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .lha  at /usr/bin/7z
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .iso  at /usr/bin/7z
+Jun 13 06:26:51 mail amavis[439]: Found decoder for    .exe  at /usr/bin/unrar-free; /usr/bin/arj
+Jun 13 06:26:51 mail amavis[439]: No decoder for       .F   
+Jun 13 06:26:51 mail amavis[439]: Deleting db files __db.002,nanny.db,__db.003,__db.001,snmp.db in /var/lib/amavis/db
+Jun 13 06:26:51 mail amavis[439]: Creating db in /var/lib/amavis/db/; BerkeleyDB 0.55, libdb 5.3
+Jun 13 06:26:51 mail postfix/master[927]: daemon started -- version 3.1.14, configuration /etc/postfix
+Jun 13 06:27:10 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=977, session=<wIyfSPGncMysFQAB>
+Jun 13 06:27:10 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=978, session=<KI2fSPGnbMysFQAB>
+Jun 13 06:27:10 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=981, session=<kMOfSPGneMysFQAB>
+Jun 13 06:27:10 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=979, session=<HI+fSPGndMysFQAB>
+Jun 13 06:27:10 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=982, session=<A8OfSPGnfMysFQAB>
+Jun 13 06:27:10 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=984, session=<LwKgSPGngMysFQAB>
+Jun 13 06:27:10 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=987, session=<JDWgSPGnhMysFQAB>
+Jun 13 06:27:10 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=989, session=<y0ygSPGniMysFQAB>
+Jun 13 06:27:10 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=990, session=<4GWgSPGnjMysFQAB>
+Jun 13 06:27:10 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=991, session=</3+gSPGnkMysFQAB>
+Jun 13 06:28:24 mail dovecot: master: Warning: Killed with signal 15 (by pid=1 uid=0 code=kill)
+Jun 13 06:28:24 mail dovecot: imap(4@localhost.com)<979><HI+fSPGndMysFQAB>: Server shutting down. in=402 out=1484 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:28:24 mail dovecot: imap(5@localhost.com)<990><4GWgSPGnjMysFQAB>: Server shutting down. in=282 out=705 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:28:24 mail dovecot: imap(3@localhost.com)<987><JDWgSPGnhMysFQAB>: Server shutting down. in=282 out=705 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:28:24 mail dovecot: imap(4@localhost.com)<989><y0ygSPGniMysFQAB>: Server shutting down. in=282 out=705 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:28:24 mail dovecot: imap(2@localhost.com)<991></3+gSPGnkMysFQAB>: Server shutting down. in=282 out=705 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:28:24 mail dovecot: imap(2@localhost.com)<982><A8OfSPGnfMysFQAB>: Server shutting down. in=402 out=1476 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:28:24 mail dovecot: imap(1@localhost.com)<984><LwKgSPGngMysFQAB>: Server shutting down. in=282 out=705 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:28:24 mail dovecot: imap(3@localhost.com)<978><KI2fSPGnbMysFQAB>: Server shutting down. in=402 out=1484 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:28:24 mail dovecot: imap(1@localhost.com)<977><wIyfSPGncMysFQAB>: Server shutting down. in=402 out=1476 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:28:24 mail dovecot: imap(5@localhost.com)<981><kMOfSPGneMysFQAB>: Server shutting down. in=402 out=1484 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:28:30 mail opendmarc[172]: OpenDMARC Filter: mi_stop=1
+Jun 13 06:28:30 mail opendmarc[172]: OpenDMARC Filter v1.3.2 terminating with status 0, errno = 0
+Jun 13 06:45:50 mail dovecot: master: Dovecot v2.3.10 (0da0eff44) starting up for imap, lmtp
+Jun 13 06:45:50 mail opendkim[165]: OpenDKIM Filter v2.11.0 starting (args: -f)
+Jun 13 06:45:50 mail opendmarc[172]: OpenDMARC Filter v1.3.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+Jun 13 06:45:50 mail opendmarc[172]: additional trusted authentication services: mail.localhost.com
+Jun 13 06:45:52 mail amavis[457]: starting. /usr/sbin/amavisd-new at mail.localhost.com amavisd-new-2.10.1 (20141025), Unicode aware
+Jun 13 06:45:52 mail amavis[457]: Net::Server: Group Not Defined.  Defaulting to EGID '111 111'
+Jun 13 06:45:52 mail amavis[457]: Net::Server: User Not Defined.  Defaulting to EUID '109'
+Jun 13 06:45:52 mail amavis[457]: Module Amavis::Conf        2.404
+Jun 13 06:45:52 mail amavis[457]: Module Archive::Zip        1.59
+Jun 13 06:45:52 mail amavis[457]: Module BerkeleyDB          0.55
+Jun 13 06:45:52 mail amavis[457]: Module Compress::Raw::Zlib 2.069
+Jun 13 06:45:52 mail amavis[457]: Module Compress::Zlib      2.069001
+Jun 13 06:45:52 mail amavis[457]: Module Digest::MD5         2.54
+Jun 13 06:45:52 mail amavis[457]: Module Encode              2.80_01
+Jun 13 06:45:52 mail amavis[457]: Module File::Temp          0.2304
+Jun 13 06:45:52 mail amavis[457]: Module IO::Socket::IP      0.37
+Jun 13 06:45:52 mail amavis[457]: Module MIME::Entity        5.508
+Jun 13 06:45:52 mail amavis[457]: Module MIME::Parser        5.508
+Jun 13 06:45:52 mail amavis[457]: Module MIME::Tools         5.508
+Jun 13 06:45:52 mail amavis[457]: Module Mail::Header        2.18
+Jun 13 06:45:52 mail amavis[457]: Module Mail::Internet      2.18
+Jun 13 06:45:52 mail amavis[457]: Module Net::LibIDN         0.12
+Jun 13 06:45:52 mail amavis[457]: Module Net::Server         2.008
+Jun 13 06:45:52 mail amavis[457]: Module Scalar::Util        1.4202
+Jun 13 06:45:52 mail amavis[457]: Module Socket              2.020_03
+Jun 13 06:45:52 mail amavis[457]: Module Time::HiRes         1.9733
+Jun 13 06:45:52 mail amavis[457]: Module Unix::Syslog        1.1
+Jun 13 06:45:52 mail amavis[457]: Amavis::ZMQ code     NOT loaded
+Jun 13 06:45:52 mail amavis[457]: Amavis::DB code      loaded
+Jun 13 06:45:52 mail amavis[457]: SQL base code        NOT loaded
+Jun 13 06:45:52 mail amavis[457]: SQL::Log code        NOT loaded
+Jun 13 06:45:52 mail amavis[457]: SQL::Quarantine      NOT loaded
+Jun 13 06:45:52 mail amavis[457]: Lookup::SQL code     NOT loaded
+Jun 13 06:45:52 mail amavis[457]: Lookup::LDAP code    NOT loaded
+Jun 13 06:45:52 mail amavis[457]: AM.PDP-in proto code loaded
+Jun 13 06:45:52 mail amavis[457]: SMTP-in proto code   loaded
+Jun 13 06:45:52 mail amavis[457]: Courier proto code   NOT loaded
+Jun 13 06:45:52 mail amavis[457]: SMTP-out proto code  loaded
+Jun 13 06:45:52 mail amavis[457]: Pipe-out proto code  NOT loaded
+Jun 13 06:45:52 mail amavis[457]: BSMTP-out proto code NOT loaded
+Jun 13 06:45:52 mail amavis[457]: Local-out proto code loaded
+Jun 13 06:45:52 mail amavis[457]: OS_Fingerprint code  NOT loaded
+Jun 13 06:45:52 mail amavis[457]: ANTI-VIRUS code      NOT loaded
+Jun 13 06:45:52 mail amavis[457]: ANTI-SPAM code       NOT loaded
+Jun 13 06:45:52 mail amavis[457]: ANTI-SPAM-EXT code   NOT loaded
+Jun 13 06:45:52 mail amavis[457]: ANTI-SPAM-C code     NOT loaded
+Jun 13 06:45:52 mail amavis[457]: ANTI-SPAM-SA code    NOT loaded
+Jun 13 06:45:52 mail amavis[457]: Unpackers code       loaded
+Jun 13 06:45:52 mail amavis[457]: DKIM code            NOT loaded
+Jun 13 06:45:52 mail amavis[457]: Tools code           NOT loaded
+Jun 13 06:45:52 mail amavis[457]: Found $file            at /usr/bin/file
+Jun 13 06:45:52 mail amavis[457]: No $altermime,         not using it
+Jun 13 06:45:52 mail amavis[457]: Internal decoder for .mail
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .Z    at /bin/uncompress
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .gz   at /bin/gzip -d
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .bz2  at /bin/bzip2 -d
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .xz   at /usr/bin/xz -dc
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .lzma at /usr/bin/xz -dc --format=lzma
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .lrz  at /usr/bin/lrzip -q -k -d -o -
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .lzo  at /usr/bin/lzop -d
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .lz4  at /usr/bin/lz4c -d
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .rpm  at /usr/bin/rpm2cpio
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .cpio at /bin/pax
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .tar  at /bin/pax
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .deb  at /usr/bin/ar
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .rar  at /usr/bin/unrar-free
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .arj  at /usr/bin/arj
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .arc  at /usr/bin/nomarch
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .zoo  at /usr/bin/zoo
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .doc  at /usr/bin/ripole
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .cab  at /usr/bin/cabextract
+Jun 13 06:45:52 mail amavis[457]: Internal decoder for .tnef
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .zip  at /usr/bin/7za
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .kmz  at /usr/bin/7za
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .7z   at /usr/bin/7zr
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .jar  at /usr/bin/7z
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .swf  at /usr/bin/7z
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .lha  at /usr/bin/7z
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .iso  at /usr/bin/7z
+Jun 13 06:45:52 mail amavis[457]: Found decoder for    .exe  at /usr/bin/unrar-free; /usr/bin/arj
+Jun 13 06:45:52 mail amavis[457]: No decoder for       .F   
+Jun 13 06:45:52 mail amavis[457]: Deleting db files __db.002,nanny.db,__db.003,__db.001,snmp.db in /var/lib/amavis/db
+Jun 13 06:45:52 mail amavis[457]: Creating db in /var/lib/amavis/db/; BerkeleyDB 0.55, libdb 5.3
+Jun 13 06:45:52 mail postfix/master[927]: daemon started -- version 3.1.14, configuration /etc/postfix
+Jun 13 06:46:10 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.6, mpid=973, session=<zr2SjPGnUNusFQAB>
+Jun 13 06:46:10 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.6, mpid=975, session=<jL6SjPGnVNusFQAB>
+Jun 13 06:46:10 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.6, mpid=976, session=<ndCSjPGnWNusFQAB>
+Jun 13 06:46:10 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.6, mpid=977, session=<mOeSjPGnXNusFQAB>
+Jun 13 06:46:10 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.6, mpid=978, session=<WP2SjPGnYNusFQAB>
+Jun 13 06:53:27 mail dovecot: master: Warning: Killed with signal 15 (by pid=1 uid=0 code=kill)
+Jun 13 06:53:27 mail dovecot: imap(1@localhost.com)<976><ndCSjPGnWNusFQAB>: Server shutting down. in=1273 out=4756 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:53:27 mail dovecot: imap(3@localhost.com)<975><jL6SjPGnVNusFQAB>: Server shutting down. in=1273 out=4756 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:53:27 mail dovecot: imap(4@localhost.com)<978><WP2SjPGnYNusFQAB>: Server shutting down. in=1273 out=4756 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:53:27 mail dovecot: imap(2@localhost.com)<973><zr2SjPGnUNusFQAB>: Server shutting down. in=1273 out=4756 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:53:27 mail dovecot: imap(5@localhost.com)<977><mOeSjPGnXNusFQAB>: Server shutting down. in=1273 out=4756 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 06:53:31 mail opendmarc[172]: OpenDMARC Filter: mi_stop=1
+Jun 13 06:53:31 mail opendmarc[172]: OpenDMARC Filter v1.3.2 terminating with status 0, errno = 0
+Jun 13 06:53:35 mail opendkim[165]: OpenDKIM Filter: mi_stop=1
+Jun 13 06:53:35 mail opendkim[165]: OpenDKIM Filter v2.11.0 terminating with status 0, errno = 0
+Jun 13 06:53:49 mail dovecot: master: Dovecot v2.3.10 (0da0eff44) starting up for imap, lmtp
+Jun 13 06:53:49 mail opendkim[164]: OpenDKIM Filter v2.11.0 starting (args: -f)
+Jun 13 06:53:49 mail opendmarc[171]: OpenDMARC Filter v1.3.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+Jun 13 06:53:49 mail opendmarc[171]: additional trusted authentication services: mail.localhost.com
+Jun 13 06:53:51 mail amavis[446]: starting. /usr/sbin/amavisd-new at mail.localhost.com amavisd-new-2.10.1 (20141025), Unicode aware
+Jun 13 06:53:51 mail amavis[446]: Net::Server: Group Not Defined.  Defaulting to EGID '111 111'
+Jun 13 06:53:51 mail amavis[446]: Net::Server: User Not Defined.  Defaulting to EUID '109'
+Jun 13 06:53:51 mail amavis[446]: Module Amavis::Conf        2.404
+Jun 13 06:53:51 mail amavis[446]: Module Archive::Zip        1.59
+Jun 13 06:53:51 mail amavis[446]: Module BerkeleyDB          0.55
+Jun 13 06:53:51 mail amavis[446]: Module Compress::Raw::Zlib 2.069
+Jun 13 06:53:51 mail amavis[446]: Module Compress::Zlib      2.069001
+Jun 13 06:53:51 mail amavis[446]: Module Digest::MD5         2.54
+Jun 13 06:53:51 mail amavis[446]: Module Encode              2.80_01
+Jun 13 06:53:51 mail amavis[446]: Module File::Temp          0.2304
+Jun 13 06:53:51 mail amavis[446]: Module IO::Socket::IP      0.37
+Jun 13 06:53:51 mail amavis[446]: Module MIME::Entity        5.508
+Jun 13 06:53:51 mail amavis[446]: Module MIME::Parser        5.508
+Jun 13 06:53:51 mail amavis[446]: Module MIME::Tools         5.508
+Jun 13 06:53:51 mail amavis[446]: Module Mail::Header        2.18
+Jun 13 06:53:51 mail amavis[446]: Module Mail::Internet      2.18
+Jun 13 06:53:51 mail amavis[446]: Module Net::LibIDN         0.12
+Jun 13 06:53:51 mail amavis[446]: Module Net::Server         2.008
+Jun 13 06:53:51 mail amavis[446]: Module Scalar::Util        1.4202
+Jun 13 06:53:51 mail amavis[446]: Module Socket              2.020_03
+Jun 13 06:53:51 mail amavis[446]: Module Time::HiRes         1.9733
+Jun 13 06:53:51 mail amavis[446]: Module Unix::Syslog        1.1
+Jun 13 06:53:51 mail amavis[446]: Amavis::ZMQ code     NOT loaded
+Jun 13 06:53:51 mail amavis[446]: Amavis::DB code      loaded
+Jun 13 06:53:51 mail amavis[446]: SQL base code        NOT loaded
+Jun 13 06:53:51 mail amavis[446]: SQL::Log code        NOT loaded
+Jun 13 06:53:51 mail amavis[446]: SQL::Quarantine      NOT loaded
+Jun 13 06:53:51 mail amavis[446]: Lookup::SQL code     NOT loaded
+Jun 13 06:53:51 mail amavis[446]: Lookup::LDAP code    NOT loaded
+Jun 13 06:53:51 mail amavis[446]: AM.PDP-in proto code loaded
+Jun 13 06:53:51 mail amavis[446]: SMTP-in proto code   loaded
+Jun 13 06:53:51 mail amavis[446]: Courier proto code   NOT loaded
+Jun 13 06:53:51 mail amavis[446]: SMTP-out proto code  loaded
+Jun 13 06:53:51 mail amavis[446]: Pipe-out proto code  NOT loaded
+Jun 13 06:53:51 mail amavis[446]: BSMTP-out proto code NOT loaded
+Jun 13 06:53:51 mail amavis[446]: Local-out proto code loaded
+Jun 13 06:53:51 mail amavis[446]: OS_Fingerprint code  NOT loaded
+Jun 13 06:53:51 mail amavis[446]: ANTI-VIRUS code      NOT loaded
+Jun 13 06:53:51 mail amavis[446]: ANTI-SPAM code       NOT loaded
+Jun 13 06:53:51 mail amavis[446]: ANTI-SPAM-EXT code   NOT loaded
+Jun 13 06:53:51 mail amavis[446]: ANTI-SPAM-C code     NOT loaded
+Jun 13 06:53:51 mail amavis[446]: ANTI-SPAM-SA code    NOT loaded
+Jun 13 06:53:51 mail amavis[446]: Unpackers code       loaded
+Jun 13 06:53:51 mail amavis[446]: DKIM code            NOT loaded
+Jun 13 06:53:51 mail amavis[446]: Tools code           NOT loaded
+Jun 13 06:53:51 mail amavis[446]: Found $file            at /usr/bin/file
+Jun 13 06:53:51 mail amavis[446]: No $altermime,         not using it
+Jun 13 06:53:51 mail amavis[446]: Internal decoder for .mail
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .Z    at /bin/uncompress
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .gz   at /bin/gzip -d
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .bz2  at /bin/bzip2 -d
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .xz   at /usr/bin/xz -dc
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .lzma at /usr/bin/xz -dc --format=lzma
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .lrz  at /usr/bin/lrzip -q -k -d -o -
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .lzo  at /usr/bin/lzop -d
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .lz4  at /usr/bin/lz4c -d
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .rpm  at /usr/bin/rpm2cpio
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .cpio at /bin/pax
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .tar  at /bin/pax
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .deb  at /usr/bin/ar
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .rar  at /usr/bin/unrar-free
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .arj  at /usr/bin/arj
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .arc  at /usr/bin/nomarch
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .zoo  at /usr/bin/zoo
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .doc  at /usr/bin/ripole
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .cab  at /usr/bin/cabextract
+Jun 13 06:53:51 mail amavis[446]: Internal decoder for .tnef
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .zip  at /usr/bin/7za
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .kmz  at /usr/bin/7za
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .7z   at /usr/bin/7zr
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .jar  at /usr/bin/7z
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .swf  at /usr/bin/7z
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .lha  at /usr/bin/7z
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .iso  at /usr/bin/7z
+Jun 13 06:53:51 mail amavis[446]: Found decoder for    .exe  at /usr/bin/unrar-free; /usr/bin/arj
+Jun 13 06:53:51 mail amavis[446]: No decoder for       .F   
+Jun 13 06:53:51 mail amavis[446]: Deleting db files __db.002,nanny.db,__db.003,__db.001,snmp.db in /var/lib/amavis/db
+Jun 13 06:53:51 mail amavis[446]: Creating db in /var/lib/amavis/db/; BerkeleyDB 0.55, libdb 5.3
+Jun 13 06:53:51 mail postfix/master[926]: daemon started -- version 3.1.14, configuration /etc/postfix
+Jun 13 06:54:10 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.2, mpid=974, session=<trYuqfGnGNKsFQAB>
+Jun 13 06:54:10 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.2, mpid=976, session=<7bsuqfGnHNKsFQAB>
+Jun 13 06:54:10 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.2, mpid=978, session=<cNEuqfGnINKsFQAB>
+Jun 13 06:54:10 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.2, mpid=979, session=<EeYuqfGnJNKsFQAB>
+Jun 13 06:54:10 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.2, mpid=980, session=<pgovqfGnKNKsFQAB>
+Jun 13 07:22:38 mail dovecot: master: Warning: Killed with signal 15 (by pid=1 uid=0 code=kill)
+Jun 13 07:22:38 mail dovecot: imap(5@localhost.com)<976><7bsuqfGnHNKsFQAB>: Server shutting down. in=4006 out=15399 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 07:22:38 mail dovecot: imap(3@localhost.com)<974><trYuqfGnGNKsFQAB>: Server shutting down. in=4006 out=15407 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 07:22:38 mail dovecot: imap(1@localhost.com)<978><cNEuqfGnINKsFQAB>: Server shutting down. in=4006 out=15399 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 07:22:38 mail dovecot: imap(2@localhost.com)<979><EeYuqfGnJNKsFQAB>: Server shutting down. in=4006 out=15407 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 07:22:38 mail dovecot: imap(4@localhost.com)<980><pgovqfGnKNKsFQAB>: Server shutting down. in=4006 out=15399 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 07:22:41 mail opendmarc[171]: OpenDMARC Filter: mi_stop=1
+Jun 13 07:22:41 mail opendmarc[171]: OpenDMARC Filter v1.3.2 terminating with status 0, errno = 0
+Jun 13 07:22:46 mail opendkim[164]: OpenDKIM Filter: mi_stop=1
+Jun 13 07:22:46 mail opendkim[164]: OpenDKIM Filter v2.11.0 terminating with status 0, errno = 0
+Jun 13 07:23:20 mail dovecot: master: Dovecot v2.3.10 (0da0eff44) starting up for imap, lmtp
+Jun 13 07:23:20 mail opendkim[164]: OpenDKIM Filter v2.11.0 starting (args: -f)
+Jun 13 07:23:20 mail opendmarc[171]: OpenDMARC Filter v1.3.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+Jun 13 07:23:20 mail opendmarc[171]: additional trusted authentication services: mail.localhost.com
+Jun 13 07:23:21 mail amavis[192]: starting. /usr/sbin/amavisd-new at mail.localhost.com amavisd-new-2.10.1 (20141025), Unicode aware
+Jun 13 07:23:21 mail amavis[192]: Net::Server: Group Not Defined.  Defaulting to EGID '111 111'
+Jun 13 07:23:21 mail amavis[192]: Net::Server: User Not Defined.  Defaulting to EUID '109'
+Jun 13 07:23:21 mail amavis[192]: Module Amavis::Conf        2.404
+Jun 13 07:23:21 mail amavis[192]: Module Archive::Zip        1.59
+Jun 13 07:23:21 mail amavis[192]: Module BerkeleyDB          0.55
+Jun 13 07:23:21 mail amavis[192]: Module Compress::Raw::Zlib 2.069
+Jun 13 07:23:21 mail amavis[192]: Module Compress::Zlib      2.069001
+Jun 13 07:23:21 mail amavis[192]: Module Digest::MD5         2.54
+Jun 13 07:23:21 mail amavis[192]: Module Encode              2.80_01
+Jun 13 07:23:21 mail amavis[192]: Module File::Temp          0.2304
+Jun 13 07:23:21 mail amavis[192]: Module IO::Socket::IP      0.37
+Jun 13 07:23:21 mail amavis[192]: Module MIME::Entity        5.508
+Jun 13 07:23:21 mail amavis[192]: Module MIME::Parser        5.508
+Jun 13 07:23:21 mail amavis[192]: Module MIME::Tools         5.508
+Jun 13 07:23:21 mail amavis[192]: Module Mail::Header        2.18
+Jun 13 07:23:21 mail amavis[192]: Module Mail::Internet      2.18
+Jun 13 07:23:21 mail amavis[192]: Module Net::LibIDN         0.12
+Jun 13 07:23:21 mail amavis[192]: Module Net::Server         2.008
+Jun 13 07:23:21 mail amavis[192]: Module Scalar::Util        1.4202
+Jun 13 07:23:21 mail amavis[192]: Module Socket              2.020_03
+Jun 13 07:23:21 mail amavis[192]: Module Time::HiRes         1.9733
+Jun 13 07:23:21 mail amavis[192]: Module Unix::Syslog        1.1
+Jun 13 07:23:21 mail amavis[192]: Amavis::ZMQ code     NOT loaded
+Jun 13 07:23:21 mail amavis[192]: Amavis::DB code      loaded
+Jun 13 07:23:21 mail amavis[192]: SQL base code        NOT loaded
+Jun 13 07:23:21 mail amavis[192]: SQL::Log code        NOT loaded
+Jun 13 07:23:21 mail amavis[192]: SQL::Quarantine      NOT loaded
+Jun 13 07:23:21 mail amavis[192]: Lookup::SQL code     NOT loaded
+Jun 13 07:23:21 mail amavis[192]: Lookup::LDAP code    NOT loaded
+Jun 13 07:23:21 mail amavis[192]: AM.PDP-in proto code loaded
+Jun 13 07:23:21 mail amavis[192]: SMTP-in proto code   loaded
+Jun 13 07:23:21 mail amavis[192]: Courier proto code   NOT loaded
+Jun 13 07:23:21 mail amavis[192]: SMTP-out proto code  loaded
+Jun 13 07:23:21 mail amavis[192]: Pipe-out proto code  NOT loaded
+Jun 13 07:23:21 mail amavis[192]: BSMTP-out proto code NOT loaded
+Jun 13 07:23:21 mail amavis[192]: Local-out proto code loaded
+Jun 13 07:23:21 mail amavis[192]: OS_Fingerprint code  NOT loaded
+Jun 13 07:23:21 mail amavis[192]: ANTI-VIRUS code      NOT loaded
+Jun 13 07:23:21 mail amavis[192]: ANTI-SPAM code       NOT loaded
+Jun 13 07:23:21 mail amavis[192]: ANTI-SPAM-EXT code   NOT loaded
+Jun 13 07:23:21 mail amavis[192]: ANTI-SPAM-C code     NOT loaded
+Jun 13 07:23:21 mail amavis[192]: ANTI-SPAM-SA code    NOT loaded
+Jun 13 07:23:21 mail amavis[192]: Unpackers code       loaded
+Jun 13 07:23:21 mail amavis[192]: DKIM code            NOT loaded
+Jun 13 07:23:21 mail amavis[192]: Tools code           NOT loaded
+Jun 13 07:23:21 mail amavis[192]: Found $file            at /usr/bin/file
+Jun 13 07:23:21 mail amavis[192]: No $altermime,         not using it
+Jun 13 07:23:21 mail amavis[192]: Internal decoder for .mail
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .Z    at /bin/uncompress
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .gz   at /bin/gzip -d
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .bz2  at /bin/bzip2 -d
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .xz   at /usr/bin/xz -dc
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .lzma at /usr/bin/xz -dc --format=lzma
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .lrz  at /usr/bin/lrzip -q -k -d -o -
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .lzo  at /usr/bin/lzop -d
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .lz4  at /usr/bin/lz4c -d
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .rpm  at /usr/bin/rpm2cpio
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .cpio at /bin/pax
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .tar  at /bin/pax
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .deb  at /usr/bin/ar
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .rar  at /usr/bin/unrar-free
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .arj  at /usr/bin/arj
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .arc  at /usr/bin/nomarch
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .zoo  at /usr/bin/zoo
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .doc  at /usr/bin/ripole
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .cab  at /usr/bin/cabextract
+Jun 13 07:23:21 mail amavis[192]: Internal decoder for .tnef
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .zip  at /usr/bin/7za
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .kmz  at /usr/bin/7za
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .7z   at /usr/bin/7zr
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .jar  at /usr/bin/7z
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .swf  at /usr/bin/7z
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .lha  at /usr/bin/7z
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .iso  at /usr/bin/7z
+Jun 13 07:23:21 mail amavis[192]: Found decoder for    .exe  at /usr/bin/unrar-free; /usr/bin/arj
+Jun 13 07:23:21 mail amavis[192]: No decoder for       .F   
+Jun 13 07:23:21 mail amavis[192]: Deleting db files __db.002,nanny.db,__db.003,__db.001,snmp.db in /var/lib/amavis/db
+Jun 13 07:23:21 mail amavis[192]: Creating db in /var/lib/amavis/db/; BerkeleyDB 0.55, libdb 5.3
+Jun 13 07:23:23 mail postfix/master[926]: daemon started -- version 3.1.14, configuration /etc/postfix
+Jun 13 07:24:10 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.2, mpid=1074, session=<bAl5FPKn6tOsFQAB>
+Jun 13 07:24:10 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.2, mpid=1076, session=<Ywp5FPKn5tOsFQAB>
+Jun 13 07:24:10 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.2, mpid=1077, session=<BSN5FPKn8NOsFQAB>
+Jun 13 07:24:10 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.2, mpid=1078, session=<WDF5FPKn8tOsFQAB>
+Jun 13 07:24:10 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.2, mpid=1079, session=<uj95FPKn9tOsFQAB>
+Jun 13 07:43:57 mail dovecot: master: Warning: Killed with signal 15 (by pid=1 uid=0 code=kill)
+Jun 13 07:43:57 mail dovecot: imap(4@localhost.com)<1078><WDF5FPKn8tOsFQAB>: Server shutting down. in=2869 out=11058 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 07:43:57 mail dovecot: imap(1@localhost.com)<1079><uj95FPKn9tOsFQAB>: Server shutting down. in=2869 out=11066 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 07:43:57 mail dovecot: imap(2@localhost.com)<1074><bAl5FPKn6tOsFQAB>: Server shutting down. in=2869 out=11058 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 07:43:57 mail dovecot: imap(3@localhost.com)<1076><Ywp5FPKn5tOsFQAB>: Server shutting down. in=2869 out=11074 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 07:43:57 mail dovecot: imap(5@localhost.com)<1077><BSN5FPKn8NOsFQAB>: Server shutting down. in=2869 out=11066 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 07:44:01 mail opendmarc[171]: OpenDMARC Filter: mi_stop=1
+Jun 13 07:44:01 mail opendmarc[171]: OpenDMARC Filter v1.3.2 terminating with status 0, errno = 0
+Jun 13 07:44:17 mail dovecot: master: Dovecot v2.3.10 (0da0eff44) starting up for imap, lmtp
+Jun 13 07:44:17 mail opendkim[165]: OpenDKIM Filter v2.11.0 starting (args: -f)
+Jun 13 07:44:18 mail opendmarc[171]: OpenDMARC Filter v1.3.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+Jun 13 07:44:18 mail opendmarc[171]: additional trusted authentication services: mail.localhost.com
+Jun 13 07:44:19 mail amavis[415]: starting. /usr/sbin/amavisd-new at mail.localhost.com amavisd-new-2.10.1 (20141025), Unicode aware
+Jun 13 07:44:19 mail amavis[415]: Net::Server: Group Not Defined.  Defaulting to EGID '111 111'
+Jun 13 07:44:19 mail amavis[415]: Net::Server: User Not Defined.  Defaulting to EUID '109'
+Jun 13 07:44:19 mail amavis[415]: Module Amavis::Conf        2.404
+Jun 13 07:44:19 mail amavis[415]: Module Archive::Zip        1.59
+Jun 13 07:44:19 mail amavis[415]: Module BerkeleyDB          0.55
+Jun 13 07:44:19 mail amavis[415]: Module Compress::Raw::Zlib 2.069
+Jun 13 07:44:19 mail amavis[415]: Module Compress::Zlib      2.069001
+Jun 13 07:44:19 mail amavis[415]: Module Digest::MD5         2.54
+Jun 13 07:44:19 mail amavis[415]: Module Encode              2.80_01
+Jun 13 07:44:19 mail amavis[415]: Module File::Temp          0.2304
+Jun 13 07:44:19 mail amavis[415]: Module IO::Socket::IP      0.37
+Jun 13 07:44:19 mail amavis[415]: Module MIME::Entity        5.508
+Jun 13 07:44:19 mail amavis[415]: Module MIME::Parser        5.508
+Jun 13 07:44:19 mail amavis[415]: Module MIME::Tools         5.508
+Jun 13 07:44:19 mail amavis[415]: Module Mail::Header        2.18
+Jun 13 07:44:19 mail amavis[415]: Module Mail::Internet      2.18
+Jun 13 07:44:19 mail amavis[415]: Module Net::LibIDN         0.12
+Jun 13 07:44:19 mail amavis[415]: Module Net::Server         2.008
+Jun 13 07:44:19 mail amavis[415]: Module Scalar::Util        1.4202
+Jun 13 07:44:19 mail amavis[415]: Module Socket              2.020_03
+Jun 13 07:44:19 mail amavis[415]: Module Time::HiRes         1.9733
+Jun 13 07:44:19 mail amavis[415]: Module Unix::Syslog        1.1
+Jun 13 07:44:19 mail amavis[415]: Amavis::ZMQ code     NOT loaded
+Jun 13 07:44:19 mail amavis[415]: Amavis::DB code      loaded
+Jun 13 07:44:19 mail amavis[415]: SQL base code        NOT loaded
+Jun 13 07:44:19 mail amavis[415]: SQL::Log code        NOT loaded
+Jun 13 07:44:19 mail amavis[415]: SQL::Quarantine      NOT loaded
+Jun 13 07:44:19 mail amavis[415]: Lookup::SQL code     NOT loaded
+Jun 13 07:44:19 mail amavis[415]: Lookup::LDAP code    NOT loaded
+Jun 13 07:44:19 mail amavis[415]: AM.PDP-in proto code loaded
+Jun 13 07:44:19 mail amavis[415]: SMTP-in proto code   loaded
+Jun 13 07:44:19 mail amavis[415]: Courier proto code   NOT loaded
+Jun 13 07:44:19 mail amavis[415]: SMTP-out proto code  loaded
+Jun 13 07:44:19 mail amavis[415]: Pipe-out proto code  NOT loaded
+Jun 13 07:44:19 mail amavis[415]: BSMTP-out proto code NOT loaded
+Jun 13 07:44:19 mail amavis[415]: Local-out proto code loaded
+Jun 13 07:44:19 mail amavis[415]: OS_Fingerprint code  NOT loaded
+Jun 13 07:44:19 mail amavis[415]: ANTI-VIRUS code      NOT loaded
+Jun 13 07:44:19 mail amavis[415]: ANTI-SPAM code       NOT loaded
+Jun 13 07:44:19 mail amavis[415]: ANTI-SPAM-EXT code   NOT loaded
+Jun 13 07:44:19 mail amavis[415]: ANTI-SPAM-C code     NOT loaded
+Jun 13 07:44:19 mail amavis[415]: ANTI-SPAM-SA code    NOT loaded
+Jun 13 07:44:19 mail amavis[415]: Unpackers code       loaded
+Jun 13 07:44:19 mail amavis[415]: DKIM code            NOT loaded
+Jun 13 07:44:19 mail amavis[415]: Tools code           NOT loaded
+Jun 13 07:44:19 mail amavis[415]: Found $file            at /usr/bin/file
+Jun 13 07:44:19 mail amavis[415]: No $altermime,         not using it
+Jun 13 07:44:19 mail amavis[415]: Internal decoder for .mail
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .Z    at /bin/uncompress
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .gz   at /bin/gzip -d
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .bz2  at /bin/bzip2 -d
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .xz   at /usr/bin/xz -dc
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .lzma at /usr/bin/xz -dc --format=lzma
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .lrz  at /usr/bin/lrzip -q -k -d -o -
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .lzo  at /usr/bin/lzop -d
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .lz4  at /usr/bin/lz4c -d
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .rpm  at /usr/bin/rpm2cpio
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .cpio at /bin/pax
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .tar  at /bin/pax
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .deb  at /usr/bin/ar
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .rar  at /usr/bin/unrar-free
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .arj  at /usr/bin/arj
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .arc  at /usr/bin/nomarch
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .zoo  at /usr/bin/zoo
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .doc  at /usr/bin/ripole
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .cab  at /usr/bin/cabextract
+Jun 13 07:44:19 mail amavis[415]: Internal decoder for .tnef
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .zip  at /usr/bin/7za
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .kmz  at /usr/bin/7za
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .7z   at /usr/bin/7zr
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .jar  at /usr/bin/7z
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .swf  at /usr/bin/7z
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .lha  at /usr/bin/7z
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .iso  at /usr/bin/7z
+Jun 13 07:44:19 mail amavis[415]: Found decoder for    .exe  at /usr/bin/unrar-free; /usr/bin/arj
+Jun 13 07:44:19 mail amavis[415]: No decoder for       .F   
+Jun 13 07:44:19 mail amavis[415]: Deleting db files __db.002,nanny.db,__db.003,__db.001,snmp.db in /var/lib/amavis/db
+Jun 13 07:44:19 mail amavis[415]: Creating db in /var/lib/amavis/db/; BerkeleyDB 0.55, libdb 5.3
+Jun 13 07:44:20 mail postfix/master[926]: daemon started -- version 3.1.14, configuration /etc/postfix
+Jun 13 07:45:10 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1083, session=<BByTX/Kn6tOsFQAB>
+Jun 13 07:45:10 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1084, session=<7RyTX/Kn7tOsFQAB>
+Jun 13 07:45:10 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1085, session=<Eh2TX/Kn5tOsFQAB>
+Jun 13 07:45:10 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1086, session=<AjeTX/Kn8tOsFQAB>
+Jun 13 07:45:10 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1088, session=<UVWTX/Kn9tOsFQAB>
+Jun 13 07:45:10 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1091, session=<mHqTX/Kn+tOsFQAB>
+Jun 13 07:45:10 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1093, session=<eZSTX/KnANSsFQAB>
+Jun 13 07:45:11 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1094, session=<qrCTX/KnAtSsFQAB>
+Jun 13 07:45:11 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1096, session=<IcyTX/KnBtSsFQAB>
+Jun 13 07:45:11 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=1097, session=<WOmTX/KnCtSsFQAB>
+Jun 13 08:01:05 mail postfix/smtps/smtpd[4322]: connect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]
+Jun 13 08:01:05 mail postfix/smtps/smtpd[4322]: Anonymous TLS connection established from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]: TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)
+Jun 13 08:01:05 mail opendmarc[171]: ignoring connection from distributed-computing-course_notification_center_1.distributed-computing-course_default
+Jun 13 08:01:05 mail postfix/smtps/smtpd[4322]: C824A604F38: client=distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5], sasl_method=PLAIN, sasl_username=0@localhost.com
+Jun 13 08:01:05 mail postfix/sender-cleanup/cleanup[4330]: C824A604F38: replace: header Mime-Version: 1.0 from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]; from=<0@localhost.com> to=<3@localhost.com> proto=ESMTP helo=<localhost>: Mime-Version: 1.0
+Jun 13 08:01:05 mail postfix/sender-cleanup/cleanup[4330]: C824A604F38: message-id=<>
+Jun 13 08:01:05 mail opendkim[165]: C824A604F38: no signing table match for '0@localhost.com'
+Jun 13 08:01:05 mail postfix/qmgr[929]: C824A604F38: from=<0@localhost.com>, size=633, nrcpt=1 (queue active)
+Jun 13 08:01:05 mail postfix/smtps/smtpd[4322]: disconnect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5] ehlo=1 auth=1 mail=1 rcpt=1 data=1 quit=1 commands=6
+Jun 13 08:01:05 mail postfix/smtpd[4333]: connect from localhost[127.0.0.1]
+Jun 13 08:01:05 mail postfix/smtpd[4333]: DCFCF604F39: client=localhost[127.0.0.1]
+Jun 13 08:01:05 mail postfix/cleanup[4334]: DCFCF604F39: message-id=<20200613080105.DCFCF604F39@mail.localhost.com>
+Jun 13 08:01:05 mail postfix/qmgr[929]: DCFCF604F39: from=<0@localhost.com>, size=867, nrcpt=1 (queue active)
+Jun 13 08:01:05 mail amavis[709]: (00709-01) Passed CLEAN {RelayedInternal}, LOCAL [172.21.0.5]:38808 <0@localhost.com> -> <3@localhost.com>, Queue-ID: C824A604F38, mail_id: 25t0GA0Vz3Jr, Hits: -, size: 599, queued_as: DCFCF604F39, 76 ms
+Jun 13 08:01:05 mail postfix/smtp[4331]: C824A604F38: to=<3@localhost.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=0.11, delays=0.02/0.01/0.01/0.07, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as DCFCF604F39)
+Jun 13 08:01:05 mail postfix/qmgr[929]: C824A604F38: removed
+Jun 13 08:01:05 mail dovecot: lmtp(4336): Connect from local
+Jun 13 08:01:06 mail dovecot: lmtp(3@localhost.com)<4336><ddsAOMGH5F7wEAAA2qOm9g>: msgid=<20200613080105.DCFCF604F39@mail.localhost.com>: saved mail to INBOX
+Jun 13 08:01:06 mail postfix/lmtp[4335]: DCFCF604F39: to=<3@localhost.com>, relay=mail.localhost.com[/var/run/dovecot/lmtp], delay=0.11, delays=0.01/0.01/0.02/0.07, dsn=2.0.0, status=sent (250 2.0.0 <3@localhost.com> ddsAOMGH5F7wEAAA2qOm9g Saved)
+Jun 13 08:01:06 mail dovecot: lmtp(4336): Disconnect from local: Client has quit the connection (state=READY)
+Jun 13 08:01:06 mail postfix/qmgr[929]: DCFCF604F39: removed
+Jun 13 08:05:26 mail postfix/smtps/smtpd[5215]: connect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]
+Jun 13 08:05:26 mail postfix/smtps/smtpd[5215]: Anonymous TLS connection established from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]: TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)
+Jun 13 08:05:26 mail opendmarc[171]: ignoring connection from distributed-computing-course_notification_center_1.distributed-computing-course_default
+Jun 13 08:05:26 mail postfix/smtps/smtpd[5215]: 5E3D0604F38: client=distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5], sasl_method=PLAIN, sasl_username=0@localhost.com
+Jun 13 08:05:26 mail postfix/sender-cleanup/cleanup[5219]: 5E3D0604F38: replace: header Mime-Version: 1.0 from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5]; from=<0@localhost.com> to=<4@localhost.com> proto=ESMTP helo=<localhost>: Mime-Version: 1.0
+Jun 13 08:05:26 mail postfix/sender-cleanup/cleanup[5219]: 5E3D0604F38: message-id=<>
+Jun 13 08:05:26 mail opendkim[165]: 5E3D0604F38: no signing table match for '0@localhost.com'
+Jun 13 08:05:26 mail postfix/qmgr[929]: 5E3D0604F38: from=<0@localhost.com>, size=633, nrcpt=1 (queue active)
+Jun 13 08:05:26 mail postfix/smtps/smtpd[5215]: disconnect from distributed-computing-course_notification_center_1.distributed-computing-course_default[172.21.0.5] ehlo=1 auth=1 mail=1 rcpt=1 data=1 quit=1 commands=6
+Jun 13 08:05:26 mail postfix/smtpd[5222]: connect from localhost[127.0.0.1]
+Jun 13 08:05:26 mail postfix/smtpd[5222]: 6F224604F39: client=localhost[127.0.0.1]
+Jun 13 08:05:26 mail postfix/cleanup[5223]: 6F224604F39: message-id=<20200613080526.6F224604F39@mail.localhost.com>
+Jun 13 08:05:26 mail postfix/qmgr[929]: 6F224604F39: from=<0@localhost.com>, size=867, nrcpt=1 (queue active)
+Jun 13 08:05:26 mail amavis[712]: (00712-01) Passed CLEAN {RelayedInternal}, LOCAL [172.21.0.5]:38930 <0@localhost.com> -> <4@localhost.com>, Queue-ID: 5E3D0604F38, mail_id: AAOwiuhCap6e, Hits: -, size: 599, queued_as: 6F224604F39, 63 ms
+Jun 13 08:05:26 mail postfix/smtp[5220]: 5E3D0604F38: to=<4@localhost.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=0.09, delays=0.02/0.01/0/0.06, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 6F224604F39)
+Jun 13 08:05:26 mail postfix/qmgr[929]: 5E3D0604F38: removed
+Jun 13 08:05:26 mail dovecot: lmtp(5225): Connect from local
+Jun 13 08:05:26 mail dovecot: lmtp(4@localhost.com)<5225><SxnmHMaI5F5pFAAA2qOm9g>: msgid=<20200613080526.6F224604F39@mail.localhost.com>: saved mail to INBOX
+Jun 13 08:05:26 mail dovecot: lmtp(5225): Disconnect from local: Client has quit the connection (state=READY)
+Jun 13 08:05:26 mail postfix/lmtp[5224]: 6F224604F39: to=<4@localhost.com>, relay=mail.localhost.com[/var/run/dovecot/lmtp], delay=0.05, delays=0.01/0.01/0.02/0.01, dsn=2.0.0, status=sent (250 2.0.0 <4@localhost.com> SxnmHMaI5F5pFAAA2qOm9g Saved)
+Jun 13 08:05:26 mail postfix/qmgr[929]: 6F224604F39: removed
+Jun 13 08:06:06 mail postfix/smtpd[4333]: timeout after END-OF-MESSAGE from localhost[127.0.0.1]
+Jun 13 08:06:06 mail postfix/smtpd[4333]: disconnect from localhost[127.0.0.1] ehlo=1 mail=1 rcpt=1 data=1 commands=4
+Jun 13 08:10:26 mail postfix/smtpd[5222]: timeout after END-OF-MESSAGE from localhost[127.0.0.1]
+Jun 13 08:10:26 mail postfix/smtpd[5222]: disconnect from localhost[127.0.0.1] ehlo=1 mail=1 rcpt=1 data=1 commands=4
+Jun 13 08:14:27 mail dovecot: imap(1@localhost.com)<1083><BByTX/Kn6tOsFQAB>: Connection closed (STATUS finished 16.188 secs ago) in=4126 out=16149 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:14:27 mail dovecot: imap(1@localhost.com)<1091><mHqTX/Kn+tOsFQAB>: Connection closed (NOOP finished 16.197 secs ago) in=295 out=724 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:14:27 mail dovecot: imap(2@localhost.com)<1084><7RyTX/Kn7tOsFQAB>: Connection closed (STATUS finished 16.186 secs ago) in=4126 out=16149 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:14:27 mail dovecot: imap(5@localhost.com)<1088><UVWTX/Kn9tOsFQAB>: Connection closed (STATUS finished 16.187 secs ago) in=4126 out=16157 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:14:27 mail dovecot: imap(3@localhost.com)<1094><qrCTX/KnAtSsFQAB>: Connection closed (NOOP finished 16.198 secs ago) in=295 out=788 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:14:27 mail dovecot: imap(3@localhost.com)<1085><Eh2TX/Kn5tOsFQAB>: Connection closed (NOOP finished 16.187 secs ago) in=3516 out=16684 deleted=0 expunged=0 trashed=0 hdr_count=1 hdr_bytes=723 body_count=0 body_bytes=0
+Jun 13 08:14:27 mail dovecot: imap(4@localhost.com)<1086><AjeTX/Kn8tOsFQAB>: Connection closed (UID FETCH finished 16.167 secs ago) in=4214 out=19231 deleted=0 expunged=0 trashed=0 hdr_count=1 hdr_bytes=723 body_count=1 body_bytes=1086
+Jun 13 08:14:27 mail dovecot: imap(2@localhost.com)<1093><eZSTX/KnANSsFQAB>: Connection closed (NOOP finished 16.199 secs ago) in=295 out=724 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:14:27 mail dovecot: imap(4@localhost.com)<1096><IcyTX/KnBtSsFQAB>: Connection closed (NOOP finished 16.205 secs ago) in=222 out=635 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:14:27 mail dovecot: imap(5@localhost.com)<1097><WOmTX/KnCtSsFQAB>: Connection closed (NOOP finished 16.205 secs ago) in=295 out=724 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:45:19 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=7079, session=<2pSrNvOnZNWsFQAB>
+Jun 13 08:45:19 mail dovecot: imap-login: Login: user=<3@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=7080, session=<K5arNvOnXtWsFQAB>
+Jun 13 08:45:19 mail dovecot: imap-login: Login: user=<2@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=7082, session=<5KmrNvOnZtWsFQAB>
+Jun 13 08:45:19 mail dovecot: imap-login: Login: user=<4@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=7084, session=<48erNvOnatWsFQAB>
+Jun 13 08:45:19 mail dovecot: imap-login: Login: user=<5@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=7085, session=<LdSrNvOnbtWsFQAB>
+Jun 13 08:45:19 mail dovecot: imap-login: Login: user=<1@localhost.com>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, mpid=7086, session=<D+erNvOnctWsFQAB>
+Jun 13 08:45:58 mail dovecot: imap(3@localhost.com)<7080><K5arNvOnXtWsFQAB>: Connection closed (IDLE finished 36.917 secs ago) in=395 out=1874 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:45:58 mail dovecot: imap(2@localhost.com)<7082><5KmrNvOnZtWsFQAB>: Connection closed (IDLE finished 36.917 secs ago) in=395 out=1843 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:45:58 mail dovecot: imap(1@localhost.com)<7079><2pSrNvOnZNWsFQAB>: Connection closed (IDLE finished 36.918 secs ago) in=395 out=1843 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:45:58 mail dovecot: imap(1@localhost.com)<7086><D+erNvOnctWsFQAB>: Connection closed (NOTIFY finished 38.870 secs ago) in=209 out=539 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:45:58 mail dovecot: imap(5@localhost.com)<7085><LdSrNvOnbtWsFQAB>: Connection closed (IDLE finished 36.917 secs ago) in=395 out=1843 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:45:58 mail dovecot: imap(4@localhost.com)<7084><48erNvOnatWsFQAB>: Connection closed (IDLE finished 36.917 secs ago) in=408 out=1891 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Jun 13 08:46:08 mail dovecot: master: Warning: Killed with signal 15 (by pid=1 uid=0 code=kill)
+Jun 13 08:46:11 mail opendmarc[171]: OpenDMARC Filter: mi_stop=1
+Jun 13 08:46:11 mail opendmarc[171]: OpenDMARC Filter v1.3.2 terminating with status 0, errno = 0
+Jun 13 08:46:16 mail opendkim[165]: OpenDKIM Filter: mi_stop=1
+Jun 13 08:46:16 mail opendkim[165]: OpenDKIM Filter v2.11.0 terminating with status 0, errno = 0

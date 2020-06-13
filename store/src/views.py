@@ -1,3 +1,4 @@
+import grpc
 from django.contrib.sites import requests
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.request import Request
@@ -12,22 +13,70 @@ import os
 from src.serializers import ProductSerializer
 import requests
 
+import sys
+
+sys.path.append("./proto")
+
+from proto.auth_pb2_grpc import AuthStub
+from proto.auth_pb2 import (
+    Admin,
+    Profile,
+    Token,
+)
+
 
 def get_token(request: Request):
     return request.META.get("HTTP_AUTHORIZATION", '').split("Bearer ")[-1]
 
 
-def verify_token(token):
-    if token == '':
+def grpc_conn_string():
+    return "auth_grpc:" + os.environ.get("AUTH_GRPC_PORT")
+
+
+auth_grpc = grpc_conn_string()
+
+
+def get_profile(token):
+    with grpc.insecure_channel(auth_grpc) as channel:
+        stub = AuthStub(channel)
+        token = Token(token=token)
+        profile = stub.Verify(token)
+        print(profile)
+
+    return profile
+
+
+# if token == '':
+#     return False
+# return requests.post(url="http://auth:" + os.environ.get("AUTH_PORT") + "/verify", # todo add env var auth_host
+#                      data={"token": token}).status_code == HTTP_200_OK
+
+def is_user(request: Request):
+    token = get_token(request)
+
+    if not get_profile(token).has_valid_token:
         return False
-    return requests.post(url="http://auth:" + os.environ.get("AUTH_PORT") + "/verify", # todo add env var auth_host
-                         data={"token": token}).status_code == HTTP_200_OK
+
+    return True
+
+
+def is_admin(request: Request):
+    token = get_token(request)
+
+    profile = get_profile(token)
+    if not profile.has_valid_token or not profile.role == Admin:
+        return False
+
+    return True
 
 
 class ProductView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request: Request):
+        if not is_user(request):
+            return Response({"message": "Wrong token or not provided"}, HTTP_401_UNAUTHORIZED)
+
         if 'id' not in request.query_params:
             return Response({"message": "id field was not provided"}, HTTP_400_BAD_REQUEST)
 
@@ -48,10 +97,8 @@ class ProductView(APIView):
         }, status=HTTP_200_OK)
 
     def put(self, request: Request):
-        token = get_token(request)
-
-        if not verify_token(token):
-            return Response({"message": "Wrong token or not provided"}, HTTP_401_UNAUTHORIZED)
+        if not is_admin(request):
+            return Response({"message": "Wrong token or not provided or not enough privileges"}, HTTP_401_UNAUTHORIZED)
 
         if 'title' not in request.data:
             return Response({"message": "title field was not provided"}, HTTP_400_BAD_REQUEST)
@@ -72,10 +119,8 @@ class ProductView(APIView):
         }, status=HTTP_200_OK)
 
     def delete(self, request: Request):
-        token = get_token(request)
-
-        if not verify_token(token):
-            return Response({"message": "Wrong token or not provided"}, HTTP_401_UNAUTHORIZED)
+        if not is_admin(request):
+            return Response({"message": "Wrong token or not provided or not enough privileges"}, HTTP_401_UNAUTHORIZED)
 
         if 'id' not in request.data:
             return Response({"message": "id field was not provided"}, HTTP_400_BAD_REQUEST)
@@ -99,10 +144,8 @@ class ProductView(APIView):
         }, status=HTTP_200_OK)
 
     def post(self, request: Request):
-        token = get_token(request)
-
-        if not verify_token(token):
-            return Response({"message": "Wrong token or not provided"}, HTTP_401_UNAUTHORIZED)
+        if not is_admin(request):
+            return Response({"message": "Wrong token or not provided or not enough privileges"}, HTTP_401_UNAUTHORIZED)
 
         if 'id' not in request.data:
             return Response({"message": "id field was not provided"}, HTTP_400_BAD_REQUEST)

@@ -7,6 +7,9 @@ name = "pypi"
 djangorestframework = "*"
 psycopg2-binary = "*"
 requests = "*"
+grpcio-tools = "*"
+grpcio = "*"
+djangogrpcframework = "*"
 
 [dev-packages]
 

@@ -13,8 +13,8 @@ services:
     env_file:
       - .env
     build:
-      context: store
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: store/Dockerfile
     command: sh -c "utils/wait-for-it.sh auth:$AUTH_PORT &&
       python manage.py makemigrations &&
       python manage.py migrate &&
@@ -25,15 +25,13 @@ services:
       - auth
     ports:
       - ${STORE_PORT}:${STORE_PORT}
-    volumes:
-      - ./store/:/onlineshop
 
   auth:
     env_file:
       - .env
     build:
-      context: simple_auth
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: simple_auth/Dockerfile
     command: sh -c "utils/wait-for-it.sh postgres:$SQL_PORT &&
       python manage.py makemigrations &&
       python manage.py migrate &&
@@ -44,8 +42,24 @@ services:
       - rabbitmq
     ports:
       - ${AUTH_PORT}:${AUTH_PORT}
-    volumes:
-      - ./simple_auth/:/auth
+
+  auth_grpc:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: simple_auth/Dockerfile
+    environment: # ???
+      - AUTH_GRPC_MODE=1
+    command: >
+      sh -c "utils/wait-for-it.sh postgres:$SQL_PORT -t 0 &&
+             python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py grpcrunserver --dev 0.0.0.0:$AUTH_GRPC_PORT"
+    depends_on:
+      - postgres
+    ports:
+      - ${AUTH_GRPC_PORT}:${AUTH_GRPC_PORT}
 
   rabbitmq:
     image: rabbitmq:management-alpine

@@ -7,11 +7,12 @@ ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
 # set work directory
-WORKDIR /auth
+WORKDIR auth
 
-COPY Pipfile Pipfile
-COPY Pipfile.lock Pipfile.lock
+COPY simple_auth/Pipfile .
+COPY simple_auth/Pipfile.lock .
 RUN pipenv install --system --deploy
 
+COPY proto proto
 # copy everything else
-ADD . .
+ADD simple_auth .

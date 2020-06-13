@@ -21,10 +21,12 @@ class Product(Base):
     id = Column(Integer, primary_key=True)
     title = Column(String)
     category = Column(String)
+    uniq_id = Column(String)
 
     engine = None
     Session = None
     session = None
+    cur_id = 1000000
 
     @staticmethod
     def insert(title, category, uniq_id):
@@ -37,14 +39,16 @@ class Product(Base):
             Product.Session = sessionmaker(bind=Product.engine)
             Product.session = Product.Session()
 
-        exists = Product.session.query(Product.id).filter_by(id=id) is not None
+     #   cur_id = abs(hash(uniq_id)) % (10 ** 8)
+
+        exists = Product.session.query(Product).filter_by(uniq_id=uniq_id).count() > 0
         if exists:
+        #    print("Yo")
             return
 
-        cur_id = abs(hash(uniq_id)) % (10 ** 8)
-
-        prod = Product(title=title, category=category, id=cur_id)
-
+        prod = Product(title=title, category=category, uniq_id=uniq_id, id=Product.cur_id)
+        # print("hoba")
+        Product.cur_id += 1
         Product.session.add(prod)
 
     @staticmethod

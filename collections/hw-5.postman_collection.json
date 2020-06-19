@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "ce3e686e-739e-40e9-abdf-5c2aeade5b65",
+		"name": "hw-5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "0.0.0.0:8001/confirm_email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "0.0.0.0:8001/confirm_email?token=",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8001",
+					"path": [
+						"confirm_email"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

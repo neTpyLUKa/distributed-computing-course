@@ -1,0 +1,126 @@
+version: "3"
+
+services:
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=${SQL_USER}
+      - POSTGRES_PASSWORD=${SQL_PASSWORD}
+      - POSTGRES_DB=${SQL_DATABASE}
+
+  onlineshop:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: store/Dockerfile
+    command: sh -c "utils/wait-for-it.sh auth:$AUTH_PORT &&
+      python manage.py makemigrations &&
+      python manage.py migrate &&
+      python manage.py runserver 0.0.0.0:$STORE_PORT"
+
+    depends_on:
+      - postgres
+      - auth
+    ports:
+      - ${STORE_PORT}:${STORE_PORT}
+
+  auth:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: simple_auth/Dockerfile
+    command: sh -c "utils/wait-for-it.sh postgres:$SQL_PORT &&
+      python manage.py makemigrations &&
+      python manage.py migrate &&
+      python manage.py runserver 0.0.0.0:$AUTH_PORT"
+
+    depends_on:
+      - postgres
+      - rabbitmq
+    ports:
+      - ${AUTH_PORT}:${AUTH_PORT}
+
+  auth_grpc:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: simple_auth/Dockerfile
+    environment: # ???
+      - AUTH_GRPC_MODE=1
+    command: >
+      sh -c "utils/wait-for-it.sh postgres:$SQL_PORT -t 0 &&
+             python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py grpcrunserver --dev 0.0.0.0:$AUTH_GRPC_PORT"
+    depends_on:
+      - postgres
+    ports:
+      - ${AUTH_GRPC_PORT}:${AUTH_GRPC_PORT}
+
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    ports:
+      - ${MQ_PORT}:${MQ_PORT}
+      - ${MQ_DEV_PORT}:${MQ_DEV_PORT}
+    env_file:
+      - .env
+
+  notification_center:
+    env_file:
+      - .env
+    build: ./notification_center
+    command: sh -c "utils/wait-for-it.sh rabbitmq:$MQ_PORT && ./app"
+    ports:
+      - ${NOTIFICATION_CENTER_PORT}:${NOTIFICATION_CENTER_PORT}
+    depends_on:
+      - rabbitmq
+
+  csv_receiver:
+    env_file:
+      - .env
+    build: ./csv_recevier
+    command: sh -c "utils/wait-for-it.sh rabbitmq:$MQ_PORT && ./app"
+    ports:
+      - ${CSV_RECEIVER_PORT}:${CSV_RECEIVER_PORT}
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ./csv_data/:/csv_data
+
+  csv_applier:
+    env_file:
+      - .env
+    build:
+      context: csv_applier
+      dockerfile: Dockerfile
+    command: sh -c "utils/wait-for-it.sh postgres:$SQL_PORT
+      && utils/wait-for-it.sh rabbitmq:$MQ_PORT
+      && python /csv_applier/main.py"
+    depends_on:
+      - postgres
+      - rabbitmq
+    volumes:
+      - ./csv_data/:/csv_data
+
+
+  mail:
+    image: tvial/docker-mailserver:latest
+    hostname: ${MAIL_HOSTNAME}
+    domainname: ${MAIL_DOMAIN}
+    ports:
+      - "6543:143"
+    volumes:
+      - ./mail/mail:/var/mail
+      - ./mail/mailstate:/var/mail-state
+      - ./mail/maillogs:/var/log/mail
+      - ./mail/config/:/tmp/docker-mailserver/
+    env_file:
+      - .env
+      - mail/.env
+    cap_add:
+      - NET_ADMIN
+      - SYS_PTRACE
